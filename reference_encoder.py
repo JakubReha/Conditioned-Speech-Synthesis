@@ -14,9 +14,9 @@ def compute_padding(H, W, S=2, F=3):
         Pw = max(F - (W % S), 0)
     return nn.ZeroPad2d((int(Pw/2), math.ceil(Pw/2), int(Ph/2), math.ceil(Ph/2)))
 
-class RefEncoder(nn.Module):
+class EmbedNet(nn.Module):
     def __init__(self, dim, max_l, norm_layer=nn.BatchNorm2d):
-        super(RefEncoder, self).__init__()
+        super(EmbedNet, self).__init__()
 
         model = [compute_padding(dim, max_l)]
         model += [nn.Conv2d(1, 32, kernel_size=3, stride=2, padding=0, bias=True), ]
@@ -54,6 +54,7 @@ class RefEncoder(nn.Module):
         model += [norm_layer(128), ]
         self.model = nn.Sequential(*model)
         self.gru = nn.GRU(128*math.ceil(dim/64), 128, batch_first=True)
+        self.fc0 = nn.Linear(128, 128)
         self.fc1 = nn.Linear(128, 256)
         self.fc2 = nn.Linear(256, 256)
         self.fc3 = nn.Linear(256, 9)
@@ -65,6 +66,8 @@ class RefEncoder(nn.Module):
         x = torch.reshape(x, (x.shape[0], x.shape[1], x.shape[2]*x.shape[3]))
         x = self.gru(x)
         x = torch.reshape(x[1].squeeze(), (batch, -1))
+        x = self.fc0(x)
+        x = F.relu(x)
         x = self.fc1(x)
         x = F.relu(x)
         x = self.fc2(x)
@@ -77,6 +80,6 @@ if __name__ == '__main__':
     max_l = 302
     batch = 256
     a = torch.rand((batch, 1, dim, max_l))
-    model = RefEncoder(dim, max_l)
+    model = EmbedNet(dim, max_l)
     out = model(a)
     print(out.shape)
