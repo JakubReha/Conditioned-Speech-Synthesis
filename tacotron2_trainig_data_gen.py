@@ -4,9 +4,6 @@ from tqdm import tqdm
 import os
 import random
 
-def getTranscript():
-    pass
-
 def getPath(iemocap_main_dir, name):
     session = 'Session' + name[4]
     folder_name = name[0:-5]
@@ -45,10 +42,6 @@ def main():
     writeToFile(outdir, 'test_filelist.txt', test_items)
     writeToFile(outdir, 'val_filelist.txt', val_items)
     
-    
-    
-
-
 
 if __name__ == '__main__':
     main()
