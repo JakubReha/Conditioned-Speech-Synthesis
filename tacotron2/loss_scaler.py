@@ -85,7 +85,6 @@ class DynamicLossScaler:
 if __name__ == "__main__":
     import torch
     from torch.autograd import Variable
-    from dynamic_loss_scaler import DynamicLossScaler
 
     # N is batch size; D_in is input dimension;
     # H is hidden dimension; D_out is output dimension.
