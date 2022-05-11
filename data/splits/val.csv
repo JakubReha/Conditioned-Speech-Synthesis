@@ -1,0 +1,503 @@
+filename|emotion|valence|arousal|dominance|text
+data/iemocap/Session2/sentences/wav/Ses02F_script03_2/Ses02F_script03_2_F042.wav|ang|1.5|4.5|4.0|I am.  Let go of me.  You're a cruel fiend and I hate and loathe you.
+data/iemocap/Session1/sentences/wav/Ses01F_script02_1/Ses01F_script02_1_F022.wav|xxx|2.5|3.0|3.0|Last time, you'll also remember, we got our shoes wet, I got sand in my panties, you got a sore throat and we got into a big fight and we did not see the grunions.
+data/iemocap/Session4/sentences/wav/Ses04M_impro06/Ses04M_impro06_F017.wav|sad|2.5|2.0|1.5|I know.
+data/iemocap/Session2/sentences/wav/Ses02F_impro07/Ses02F_impro07_M014.wav|xxx|3.5|2.5|3.5|That's great.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_1/Ses04F_script02_1_M028.wav|sur|2.5|3.5|3.0|For real?
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_M005.wav|ang|1.5|2.5|2.0|I thought you said this wasn't going to happen for at least a year.
+data/iemocap/Session3/sentences/wav/Ses03F_script03_1/Ses03F_script03_1_M016.wav|xxx|3.5|3.0|3.0|Depends on how well we play it.
+data/iemocap/Session3/sentences/wav/Ses03F_script03_1/Ses03F_script03_1_M002.wav|xxx|3.0|3.0|3.0|I wonder.
+data/iemocap/Session3/sentences/wav/Ses03M_impro08a/Ses03M_impro08a_F030.wav|fru|3.0|2.5|3.0|A law firm.  Thank you very much.
+data/iemocap/Session2/sentences/wav/Ses02F_impro08/Ses02F_impro08_M018.wav|neu|3.5|2.5|3.0|All right.  So we're confirmed then or do you--All right.
+data/iemocap/Session5/sentences/wav/Ses05M_script01_3/Ses05M_script01_3_M009.wav|xxx|3.5|4.5|3.0|I don't know what to say.  I have no imagination.  That's all I have to say to you.  God, I'm embarrassing you. I-I didn't want to do this here. I- I wanted to do it someplace different, someplace where we could be new to each other.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_M039.wav|ang|1.5|4.0|5.0|Yes, I like it and hour a day. If I'm going to grub for money all day long, at least in the evening I want it beautiful.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_1/Ses04F_script02_1_F003.wav|xxx|2.0|2.5|3.0|It's ours.  It's mine too.
+data/iemocap/Session5/sentences/wav/Ses05M_script01_3/Ses05M_script01_3_M010.wav|exc|3.5|3.5|3.0|You feel it's wrong here, don't you; this yard, this chair?  I want you to be ready for me, Annie. I- I don't want to win you away from anything.
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_F026.wav|fru|2.5|2.0|3.5|You're saving the environment. mmhmm
+data/iemocap/Session1/sentences/wav/Ses01F_script03_1/Ses01F_script03_1_F024.wav|exc|5.0|4.5|2.5|Oh Charles, that was his name.  He did wiggle so beautifully.
+data/iemocap/Session2/sentences/wav/Ses02M_impro07/Ses02M_impro07_F028.wav|hap|4.0|3.0|3.5|and we'll explore and you going to have such a good time, you're going to fit in so well, it's going to be awesome
+data/iemocap/Session3/sentences/wav/Ses03F_impro06/Ses03F_impro06_F005.wav|sad|2.0|3.0|3.0|They thought he got--would get better and he did, and then it just- things turned bad.
+data/iemocap/Session5/sentences/wav/Ses05M_impro08/Ses05M_impro08_F015.wav|neu|3.0|2.5|2.5|Okay.
+data/iemocap/Session3/sentences/wav/Ses03F_impro08/Ses03F_impro08_F027.wav|neu|2.5|3.5|4.0|what I would like what I'm advising you to do now is just to write down all of your problems that you-you feel that--You know, haven't been addressed, fax it to us-
+data/iemocap/Session4/sentences/wav/Ses04F_script03_1/Ses04F_script03_1_F015.wav|xxx|2.0|3.5|2.5|We always want to bicker and fight.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_M010.wav|fru|2.0|3.5|4.0|No I don't want to argue with him but, it's time that he realizes that nobody believes Larry's coming back anymore.
+data/iemocap/Session4/sentences/wav/Ses04M_impro01/Ses04M_impro01_M001.wav|fru|2.0|3.5|3.0|And I've- I've- some lady -- I got in line.  I waited for about two hours um, and, I gave her this form
+data/iemocap/Session5/sentences/wav/Ses05F_script01_2/Ses05F_script01_2_M008.wav|fru|2.0|4.0|3.0|Look.  It's a nice day.  Why are we arguing?
+data/iemocap/Session3/sentences/wav/Ses03M_impro08a/Ses03M_impro08a_M013.wav|neu|3.0|3.0|4.0|So you could----speak with me some more, you could call back later on maybe.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_2/Ses03M_script01_2_M000.wav|fru|2.5|2.5|2.5|Why does that bother you?
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_M021.wav|neu|2.0|4.0|3.5|Okay.  So then it's alright.  I'll go ahead with it.
+data/iemocap/Session4/sentences/wav/Ses04F_script03_2/Ses04F_script03_2_M041.wav|ang|2.0|3.5|4.0|You're a vile tempered, loose living, wicked little beast. And I hope I never see you again as long as I live.
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_M043.wav|ang|1.0|4.5|5.0|Shut up, shut up.  I wouldn't marry you again if you came crawling to me on bended knee. You're a mean, evil-minded little vampire and I hope to God I never set eyes on you again.
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_M011.wav|fru|1.5|3.0|2.5|Oh
+data/iemocap/Session5/sentences/wav/Ses05M_script01_1b/Ses05M_script01_1b_F014.wav|xxx|3.0|3.0|3.5|Well, I've got an idea but what's the story?
+data/iemocap/Session2/sentences/wav/Ses02M_script01_2/Ses02M_script01_2_M004.wav|neu|3.0|3.3333|2.6667|How do you know he's even thinking of it?
+data/iemocap/Session1/sentences/wav/Ses01M_impro01/Ses01M_impro01_F021.wav|ang|1.0|4.5|5.0|Do you know how long I've been working here? How long have you lived in California?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_3/Ses05F_script01_3_F025.wav|sad|2.5|3.5|4.5|Because you can't feel like that anymore Chris, you hear me?  I mean everything that you have, you deserve.  And that includes me.  And your father?  Your father put hundreds of planes in the air, you should be proud.  A man should be paid for that.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_1/Ses03F_script02_1_F008.wav|xxx|2.0|2.5|3.5|That's my point.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_F021.wav|xxx|3.0|2.6667|2.3333|You want to make sure that your father's not going to...
+data/iemocap/Session2/sentences/wav/Ses02M_script03_2/Ses02M_script03_2_F024.wav|neu|3.0|3.0|3.0|Yes, I did quite a lot.
+data/iemocap/Session4/sentences/wav/Ses04F_impro05/Ses04F_impro05_F007.wav|sur|1.5|3.5|4.0|Wait.  What?
+data/iemocap/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_F017.wav|sad|2.0|2.5|3.0|Yeah, I'm just going to miss him.
+data/iemocap/Session4/sentences/wav/Ses04F_impro04/Ses04F_impro04_F022.wav|fru|2.0|3.5|4.0|I make myself very presentable before I go to any kind of interview.
+data/iemocap/Session3/sentences/wav/Ses03F_impro06/Ses03F_impro06_F032.wav|sad|2.5|2.0|2.5|yeah.
+data/iemocap/Session3/sentences/wav/Ses03F_impro07/Ses03F_impro07_F010.wav|xxx|3.5|3.5|2.5|And I was like what? She's like, you know, you didn't get in. Totally plays it off. Like I didn't get in. And I'm like, I start almost crying.
+data/iemocap/Session2/sentences/wav/Ses02F_script03_1/Ses02F_script03_1_F001.wav|fea|3.0|3.0|2.6667|Well, nobody know we're here except Freda and she wouldn't ring up.
+data/iemocap/Session2/sentences/wav/Ses02F_script03_2/Ses02F_script03_2_M029.wav|fru|2.5|3.0|3.0|Oh, very interesting.  How about a child of four?  A child of six?  Or a child of nine?
+data/iemocap/Session2/sentences/wav/Ses02F_script01_3/Ses02F_script01_3_M034.wav|sad|2.0|3.0|4.5|Because otherwise all you have is really loot and there's blood on it.  And I didn't want to take any of it.  And I guess that included you.
+data/iemocap/Session5/sentences/wav/Ses05F_impro04/Ses05F_impro04_F046.wav|xxx|3.0|2.5|3.0|Yeah, thank you.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_2/Ses04F_script02_2_M001.wav|xxx|2.5|3.0|3.0|What I said.
+data/iemocap/Session1/sentences/wav/Ses01F_impro03/Ses01F_impro03_M017.wav|sur|3.6667|3.6667|2.3333|Really? Penny slots?
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_F021.wav|exc|3.5|3.0|2.5|do they have a--is it a co-ed softball team?  I mean... Really? You know, I didn't even know that they have that.
+data/iemocap/Session5/sentences/wav/Ses05F_impro07/Ses05F_impro07_M028.wav|xxx|3.5|3.5|4.0|Oh, man, I'd have been so mad at you.  I'd have been so mad at you, because, what could I have done,
+data/iemocap/Session4/sentences/wav/Ses04F_script01_3/Ses04F_script01_3_F019.wav|xxx|2.5|2.5|3.5|No.  What is it Chris, your mother?
+data/iemocap/Session1/sentences/wav/Ses01M_impro06/Ses01M_impro06_M013.wav|sad|2.5|3.0|3.0|He was sick. He got sick. He got sick but it happened really, really fast, you know.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_3/Ses05F_script01_3_F022.wav|sad|2.5|2.5|2.5|how many?
+data/iemocap/Session3/sentences/wav/Ses03M_impro05a/Ses03M_impro05a_M022.wav|ang|2.5|2.5|3.0|Oh my God.  I think a blood vessel burst in my head.
+data/iemocap/Session5/sentences/wav/Ses05M_impro05/Ses05M_impro05_M010.wav|neu|3.0|3.6667|2.6667|I mean, it's not big or anything like that.  I mean, it's not worth a lot of money or anything.
+data/iemocap/Session3/sentences/wav/Ses03F_impro08/Ses03F_impro08_M025.wav|xxx|2.5|2.5|3.0|So you're giving me a dollar back.
+data/iemocap/Session4/sentences/wav/Ses04F_impro06/Ses04F_impro06_M003.wav|sad|3.0|2.0|2.5|Yeah.
+data/iemocap/Session1/sentences/wav/Ses01M_impro04/Ses01M_impro04_F012.wav|neu|2.5|3.0|3.5|No.
+data/iemocap/Session4/sentences/wav/Ses04M_impro05/Ses04M_impro05_F003.wav|neu|3.0|1.5|1.5|Right.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_2/Ses05M_script03_2_M041.wav|ang|1.0|4.5|5.0|You are a vile tempered, wicked living, evil little beast.  And I hope I never set eyes on you ever again.
+data/iemocap/Session4/sentences/wav/Ses04F_script01_1/Ses04F_script01_1_F013.wav|ang|1.5|3.5|4.0|How are you going to prove it?  Can you prove it?
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F049.wav|hap|4.0|2.5|3.0|L.A. apartment is fine.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_F023.wav|hap|4.3333|3.6667|2.6667|Dancing barefoot in the sand. Drinking out of a bottle of champagne.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_1/Ses05F_script02_1_M029.wav|exc|4.0|3.5|2.5|Look there, what's that?  Is it?  Is that a--Ah, it's a seaweed isn't it?
+data/iemocap/Session4/sentences/wav/Ses04M_impro08/Ses04M_impro08_F012.wav|fru|1.5|3.5|4.5|of the money that I was charged that I didn't make those calls.
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_F041.wav|exc|4.5|3.5|3.0|Ha ha.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_2/Ses01F_script01_2_M011.wav|fru|2.5|2.0|3.0|Kate.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_M009.wav|fru|2.3333|3.3333|2.6667|We missed them twice. That's not ever.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_3/Ses03M_script01_3_M022.wav|xxx|3.0|3.0|2.5|I kissed you.
+data/iemocap/Session1/sentences/wav/Ses01F_script03_1/Ses01F_script03_1_F030.wav|hap|4.0|3.0|2.5|[LAUGHTER] And very much sillier.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_M013.wav|ang|1.5|4.0|4.5|For God sakes it's been three years, nobody comes back after three years, that's insane.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_2/Ses05M_script03_2_M032.wav|ang|2.0|3.5|3.5|You better turn that off, I think.
+data/iemocap/Session4/sentences/wav/Ses04M_impro08/Ses04M_impro08_M022.wav|neu|3.5|2.5|3.0|You're welcome.
+data/iemocap/Session3/sentences/wav/Ses03F_script03_1/Ses03F_script03_1_M005.wav|neu|4.0|3.0|3.0|Then I don't care.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_2/Ses02M_script01_2_M013.wav|fru|2.6667|2.6667|3.6667|Calm yourself.
+data/iemocap/Session2/sentences/wav/Ses02M_impro02/Ses02M_impro02_M009.wav|sad|3.0|2.5|4.0|I've never been - I've never been away from you for two weeks let alone a year.
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_M015.wav|ang|1.5|4.0|3.5|It doesn't make any sense.  It's stupid.  I told you you shouldn't go in the Army.
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_F036.wav|sad|1.5|2.0|1.5|It's all I ever knew how to do. I can't quit now.
+data/iemocap/Session1/sentences/wav/Ses01F_impro01/Ses01F_impro01_M005.wav|fru|2.0|3.5|3.5|You can't--  This is not the line for Z.X.four.  If you're going to fill out the Z.X.four, you need to have a different form of ID.
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_M056.wav|xxx|4.0|3.0|3.5|Exactly. Are you going to have kids?
+data/iemocap/Session2/sentences/wav/Ses02F_script03_1/Ses02F_script03_1_M022.wav|exc|4.0|3.0|4.3333|Let's be superficial and pity the poor philosophers.  Let's blow our trumpets and squeakers and enjoy the party as much as we can.  Like quite idiotic, very small school children.  Let's savor the delight of the moment.
+data/iemocap/Session2/sentences/wav/Ses02M_impro01/Ses02M_impro01_F012.wav|fru|3.0|3.0|3.0|Yes, you did, thank you very much, but we're not responsible if you've forgotten something, and we need to have two forms of ID.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_2/Ses02F_script01_2_F000.wav|xxx|2.0|2.6667|3.0|Why did he invite her here?
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_F028.wav|sad|2.0|3.5|3.5|But, Chris, it wouldn't work like this.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_1/Ses05M_script03_1_F011.wav|neu|3.0|2.0|3.5|Don't laugh at me.  I'm serious.
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_M015.wav|fru|2.5|2.5|2.0|Okay.  I'm trying to work this backwards and pinpoint the exact moment where we took a turn for the worst here.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_M000.wav|exc|3.3333|3.0|2.3333|So what do you think?
+data/iemocap/Session3/sentences/wav/Ses03F_impro03/Ses03F_impro03_F021.wav|hap|3.5|3.5|3.5|like I think I want to get married--I want to have two weddings. One here, then one in Europe.
+data/iemocap/Session2/sentences/wav/Ses02F_script03_1/Ses02F_script03_1_M019.wav|exc|3.6667|3.0|4.0|Yes.  Yes. With all his might.
+data/iemocap/Session2/sentences/wav/Ses02F_impro02/Ses02F_impro02_F009.wav|sad|2.5|2.0|2.0|You can just remember it for me.
+data/iemocap/Session2/sentences/wav/Ses02F_impro05/Ses02F_impro05_F018.wav|fru|2.0|2.5|4.0|There needs to be better security here.
+data/iemocap/Session2/sentences/wav/Ses02M_script03_2/Ses02M_script03_2_F042.wav|ang|1.0|4.5|4.5|You're a beast. I hate you. Stop it. Stop it.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_M039.wav|xxx|2.5|3.0|4.0|I am thinking like that.
+data/iemocap/Session1/sentences/wav/Ses01F_impro05/Ses01F_impro05_M015.wav|neu|2.5|2.0|1.5|No, no.  This is real.
+data/iemocap/Session3/sentences/wav/Ses03M_impro04/Ses03M_impro04_M029.wav|fru|2.0|3.0|3.5|That's what I've been doing, temporary things
+data/iemocap/Session5/sentences/wav/Ses05M_script02_1/Ses05M_script02_1_F008.wav|xxx|2.0|3.0|3.5|That's my point.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_M006.wav|fru|2.5|3.0|2.5|Well, okay ,well First off, fine, fine, fine.  Let's see, first off, um- yeah my bill's wrong.
+data/iemocap/Session2/sentences/wav/Ses02M_impro08/Ses02M_impro08_M027.wav|neu|3.3333|3.0|3.0|And you know just I mean be careful in the future if um
+data/iemocap/Session4/sentences/wav/Ses04F_impro08/Ses04F_impro08_M017.wav|ang|2.0|3.5|4.5|You're not going to call the other operator. You're not going to call the the other operator.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_2/Ses05M_script02_2_M037.wav|hap|4.0|3.3333|2.3333|Well, it isn't champagne.
+data/iemocap/Session4/sentences/wav/Ses04M_script01_3/Ses04M_script01_3_F019.wav|xxx|2.0|3.0|3.5|You've got to tell me.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_2/Ses03F_script01_2_M003.wav|neu|3.0|3.5|3.0|How do you know he's even thinking about it?
+data/iemocap/Session1/sentences/wav/Ses01M_impro01/Ses01M_impro01_M030.wav|ang|1.5|3.0|4.0|Why?
+data/iemocap/Session5/sentences/wav/Ses05M_impro07/Ses05M_impro07_M004.wav|exc|4.0|3.5|2.5|oh, Theater. yeah, yeah.
+data/iemocap/Session1/sentences/wav/Ses01F_impro05/Ses01F_impro05_F013.wav|xxx|2.0|2.5|3.0|So you'll give me money and then I'll get my bag?
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_F015.wav|xxx|2.0|4.0|3.5|I don't like- I don't like sending things in the mail.  I don't want my information out there.
+data/iemocap/Session5/sentences/wav/Ses05M_impro01/Ses05M_impro01_F018.wav|fru|2.0|3.5|3.5|Sir, don't patronize me.  I can't make an exception.  I don't- I don't have the power to do that.  It's a different form.
+data/iemocap/Session5/sentences/wav/Ses05M_impro01/Ses05M_impro01_M007.wav|xxx|2.0|3.0|3.0|right.
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_M005.wav|neu|3.0|3.0|3.0|He's like a manager for a theatre.
+data/iemocap/Session4/sentences/wav/Ses04F_impro05/Ses04F_impro05_F018.wav|ang|1.0|4.5|4.5|Really, you don't work for anybody.  It's just you?
+data/iemocap/Session3/sentences/wav/Ses03M_script03_1/Ses03M_script03_1_M038.wav|xxx|3.0|3.5|3.5|The real cause of that rile was Peter Burden.
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_M010.wav|exc|3.5|3.0|3.0|That's a really good idea. Or I could go to like Santa Monica. Go beach. Venice beach, yeah a little dirty though. I don't want to go to Venice beach. But - Malibu. All right.
+data/iemocap/Session2/sentences/wav/Ses02M_impro07/Ses02M_impro07_M010.wav|hap|3.0|3.0|2.5|and everything like but
+data/iemocap/Session3/sentences/wav/Ses03M_script01_3/Ses03M_script01_3_F021.wav|hap|3.5|3.0|3.0|Not like that you're not.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_M023.wav|ang|1.3333|4.6667|4.3333|To hell with that.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_M010.wav|fru|2.5|3.5|2.0|Well, when I look online, it says, it says that I was charged a late fee so I'm assuming that I paid on your web site-
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_M035.wav|exc|3.5|3.5|3.0|[BREATHING]
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_M009.wav|hap|3.5|3.5|2.5|Ann, I love you.  I love you.
+data/iemocap/Session3/sentences/wav/Ses03M_impro06/Ses03M_impro06_M017.wav|sad|1.5|3.0|4.5|-do I miss him or do I hate him, you know?
+data/iemocap/Session3/sentences/wav/Ses03M_script01_3/Ses03M_script01_3_F033.wav|sad|2.0|4.0|4.5|that includes me too, I mean and the money, you have right to that money.  Your father put planes up in the air, good planes and he deserves it, you should be proud of that.  A man should be paid for that.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_F004.wav|ang|2.0|3.6667|3.0|Look, I'm sorry but it's still just fish to me.
+data/iemocap/Session5/sentences/wav/Ses05F_impro04/Ses05F_impro04_F029.wav|fru|2.5|1.5|2.5|I don't know.
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_M003.wav|xxx|4.0|2.0|1.5|Oh, wow. That's great.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_2/Ses02F_script02_2_M006.wav|fru|2.5|3.5|4.0|Well, what's bugging you?
+data/iemocap/Session3/sentences/wav/Ses03M_impro04/Ses03M_impro04_M015.wav|dis|2.5|2.0|1.5|I don't want to be a law clerk.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_M026.wav|fru|2.0|3.3333|3.0|So what.  I'm not fast with women.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_M019.wav|neu|3.3333|2.6667|2.0|Wait a minute.  I've got it.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M015.wav|xxx|4.0|2.5|3.5|They have- they have that
+data/iemocap/Session3/sentences/wav/Ses03M_script03_2/Ses03M_script03_2_F001.wav|ang|2.0|3.5|4.0|Presents?  A trivial little broach.
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_F002.wav|xxx|4.0|3.0|3.5|What's going on?
+data/iemocap/Session5/sentences/wav/Ses05F_impro05/Ses05F_impro05_M007.wav|neu|2.5|3.5|3.5|I'm not sure where it is.  We can absolutely keep an eye out for for it for you.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_F041.wav|ang|1.6667|4.3333|4.0|Well, you don't think like that.
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_M008.wav|xxx|4.0|3.0|3.5|That's great
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_F023.wav|ang|1.6667|3.6667|4.3333|I'm sorry.  I ignore what I've got to ignore. That girl is Larry's girl.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_1/Ses03M_script02_1_M020.wav|fru|2.0|4.0|4.5|That's my point too...No.  No.  That's not my point.  My point is what's the point if we come down here if we just turn around and leave?
+data/iemocap/Session1/sentences/wav/Ses01M_script03_2/Ses01M_script03_2_M007.wav|xxx|2.0|3.5|4.0|Well, you let him kiss you.  You said you did.
+data/iemocap/Session4/sentences/wav/Ses04M_script01_3/Ses04M_script01_3_M012.wav|xxx|2.0|3.0|4.0|Then he's gone forever?  You're sure?
+data/iemocap/Session3/sentences/wav/Ses03M_script01_3/Ses03M_script01_3_M007.wav|xxx|3.0|3.0|2.0|So, would you want to?
+data/iemocap/Session2/sentences/wav/Ses02M_impro03/Ses02M_impro03_M002.wav|xxx|5.0|3.5|3.5|I-I asked her to marry me.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_M028.wav|ang|2.3333|3.0|3.3333|Welcome to the human race.
+data/iemocap/Session2/sentences/wav/Ses02M_impro01/Ses02M_impro01_M005.wav|neu|2.5|3.5|2.5|well is the dri-driver's license going to work?
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F053.wav|hap|4.0|2.5|3.0|Definitely not for a while
+data/iemocap/Session2/sentences/wav/Ses02F_impro04/Ses02F_impro04_M014.wav|fru|3.0|3.5|2.0|Or, well, no.  Okay. you -[GARBAGE]
+data/iemocap/Session3/sentences/wav/Ses03F_impro07/Ses03F_impro07_F009.wav|exc|4.0|3.5|2.5|Yeah, I know, my mom called me. I was with my girlfriend in Boston, and uh- she got the letter and she called me, she said I don't know, do you want me to open it? And I was like yes, open it. And she opened it and she goes oh, I'm sorry, Nat.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_2/Ses04F_script02_2_M015.wav|fru|2.5|2.5|3.0|It's just a fish.  Nothing to get traumatized over.
+data/iemocap/Session4/sentences/wav/Ses04F_impro08/Ses04F_impro08_M018.wav|ang|2.5|3.5|4.5|You're going to fill out a form on your desk
+data/iemocap/Session5/sentences/wav/Ses05M_impro02/Ses05M_impro02_M002.wav|xxx|2.0|2.3333|2.0|I know. I have to go-
+data/iemocap/Session2/sentences/wav/Ses02M_impro06/Ses02M_impro06_F001.wav|sur|1.5|2.5|4.0|Oh my God. Oh my God, I'm so sorry.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_F021.wav|hap|4.0|3.0|2.3333|Oh, that moment-that was it.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_F005.wav|sad|2.0|2.0|2.5|He cried hard?
+data/iemocap/Session4/sentences/wav/Ses04M_impro05/Ses04M_impro05_M001.wav|xxx|3.0|1.5|2.5|Just arrived from London--
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_M013.wav|xxx|2.0|3.0|2.0|You remember the last time you went? You know how hard it was for me? Now we have a kid.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_2/Ses01F_script01_2_M007.wav|fru|2.5|3.5|3.5|You can't read her mind.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_2/Ses01F_script01_2_F002.wav|xxx|2.5|2.5|4.5|Nobody comes seven hundred miles just to see.
+data/iemocap/Session4/sentences/wav/Ses04F_impro04/Ses04F_impro04_M000.wav|xxx|2.0|3.0|3.5|Hey.  Get out of the way.  I'm watching TV.
+data/iemocap/Session3/sentences/wav/Ses03M_impro08a/Ses03M_impro08a_M018.wav|neu|2.5|2.5|3.0|I'm really sorry ma'am.  There's not----a lot we can do for it.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M028.wav|exc|4.0|3.5|3.5|That's awesome.
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_M040.wav|exc|4.0|2.5|4.0|Wow.  I just- I- I- I feel like I'm going to faint.
+data/iemocap/Session3/sentences/wav/Ses03F_impro03/Ses03F_impro03_M003.wav|xxx|3.5|2.5|2.5|Is it-
+data/iemocap/Session5/sentences/wav/Ses05M_impro02/Ses05M_impro02_M030.wav|exc|2.6667|3.3333|3.3333|You you record every second.  You record every second because I want to see it all.  Okay?
+data/iemocap/Session1/sentences/wav/Ses01M_impro04/Ses01M_impro04_F006.wav|neu|2.5|2.0|3.0|I don't know just sometimes you get kind of... No, I'm not saying that.  I just--
+data/iemocap/Session1/sentences/wav/Ses01F_script03_2/Ses01F_script03_2_F029.wav|ang|2.5|3.5|4.0|Not very funny, darling.  Why don't you have some more brandy.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_M003.wav|neu|3.0|2.0|2.0|I don't know.
+data/iemocap/Session5/sentences/wav/Ses05M_impro07/Ses05M_impro07_M025.wav|exc|2.5|3.0|2.0|Yeah, yeah.  I- I don't- I don't know.  Do you have any suggestions?
+data/iemocap/Session2/sentences/wav/Ses02M_impro01/Ses02M_impro01_M001.wav|neu|3.5|3.0|2.5|Yea. I just want to get this done,
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_F027.wav|xxx|2.5|3.0|3.5|'Cause you mustn't feel that way.  Everything you have, you have a right to...
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_F010.wav|sad|3.0|2.5|1.5|yeah.
+data/iemocap/Session4/sentences/wav/Ses04M_impro03/Ses04M_impro03_M025.wav|hap|4.0|3.5|4.0|And it's going to -- the -- you know, I told her that I just -- I want the color brown to be as an integral in the wedding.  And, um, maybe some greens and blues.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_M022.wav|fru|2.6667|3.0|2.6667|What? What? Do you want me to breathe in your ear?
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_F009.wav|sad|1.0|3.0|1.5|I know.  I know.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M001.wav|neu|3.0|3.0|2.5|You're not sorry you came?
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_M014.wav|xxx|4.0|3.5|3.5|You've got to love that.
+data/iemocap/Session4/sentences/wav/Ses04M_script03_2/Ses04M_script03_2_M041.wav|ang|2.5|3.5|3.5|You better turn that off I think.
+data/iemocap/Session4/sentences/wav/Ses04F_script03_2/Ses04F_script03_2_F033.wav|xxx|2.0|3.0|3.5|Turn it on again, please.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_M040.wav|sad|1.5|2.5|2.5|I felt ashamed and I didn't want any part of it.  I guess I included you too.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_M031.wav|fru|1.5|4.0|4.5|I can't help it I know her best. I mean lived next door to her my whole life. These years when I think of a wife, I think of Annie.
+data/iemocap/Session3/sentences/wav/Ses03M_script03_1/Ses03M_script03_1_M000.wav|xxx|2.5|3.5|4.0|Good God.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_F014.wav|fru|2.0|2.5|3.5|What are you so excited about?  I mean, it's not a moon landing we're talking about here.  It's fish.  It's a fish nobody even eats.
+data/iemocap/Session4/sentences/wav/Ses04M_impro04/Ses04M_impro04_F006.wav|neu|3.0|2.0|3.3333|Well then you're choosing to be unemployed, really.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M029.wav|neu|3.0|2.5|3.5|Because it is.
+data/iemocap/Session2/sentences/wav/Ses02F_impro07/Ses02F_impro07_F000.wav|xxx|4.0|3.5|4.5|It's going really well.  Um, I received something in the mail today.
+data/iemocap/Session4/sentences/wav/Ses04F_script01_2/Ses04F_script01_2_F011.wav|fru|2.5|3.5|4.0|In my worst moments, I think of her waiting and I know again that I'm right.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_F000.wav|neu|3.0|1.5|2.5|Hi, sir.  How can I help you?
+data/iemocap/Session3/sentences/wav/Ses03M_script03_1/Ses03M_script03_1_F003.wav|exc|3.0|2.5|3.5|Now and always sweet.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_2/Ses02F_script02_2_M024.wav|fru|2.0|3.5|2.5|Well, what?  You want me to breathe in your ear?
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_M009.wav|fru|2.3333|3.6667|3.6667|You know?  Why shouldn't he walk the nights thinking of him, dreaming of him?   Do we contradict him?  Do we say, we don't have any hope anymore?  That we haven't had any hope for years now?
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M021.wav|ang|2.0|3.5|4.5|Well, then it isn't just my business--
+data/iemocap/Session4/sentences/wav/Ses04F_script03_1/Ses04F_script03_1_M005.wav|xxx|3.0|3.0|4.0|Hello.  Hello.  What?  Wrong number.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_M017.wav|neu|3.0|3.0|3.3333|I'm going to ask her to marry me.
+data/iemocap/Session5/sentences/wav/Ses05M_impro04/Ses05M_impro04_M024.wav|fru|2.0|4.0|4.5|Do you have any idea how I can make money?  I mean, what can I do to make some quick money, something?  Anything, that's relatively within the you know law.
+data/iemocap/Session1/sentences/wav/Ses01M_impro04/Ses01M_impro04_M010.wav|fru|1.5|3.5|4.5|I guess I just getting really hard to fake, you know.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M029.wav|sad|2.5|3.0|3.5|You know when I went overseas. I said I was in command of a company.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_3/Ses01F_script01_3_M023.wav|sad|2.3333|3.0|2.3333|Yeah.  I suppose I have been. But it's going from me.
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_M029.wav|xxx|2.5|3.0|3.0|Like a new carpet?  A poodle?  A back rub?  Ice cream?  A suicide pact?  What do you want?  What the hell do you want?
+data/iemocap/Session3/sentences/wav/Ses03F_impro06/Ses03F_impro06_M001.wav|neu|2.5|2.0|2.5|We're all going to miss him.
+data/iemocap/Session4/sentences/wav/Ses04M_impro05/Ses04M_impro05_M033.wav|fru|3.5|3.0|3.0|with different names on them? That-
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M008.wav|xxx|2.0|2.5|3.5|Being dishonest with him.  I mean, that sort of thing always pays off and now it's paying off.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_2/Ses05M_script03_2_F024.wav|xxx|4.0|2.5|3.0|[LAUGHTER] Mind your own business.
+data/iemocap/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_F023.wav|sad|2.0|3.5|3.0|really hard to imagine that like you're going to continue to live, and that person's just going to have stopped.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M026.wav|neu|2.5|3.5|3.0|No, no, no, no. Nothing like that.
+data/iemocap/Session4/sentences/wav/Ses04M_script03_1/Ses04M_script03_1_M016.wav|sad|2.0|3.0|3.0|No.  That fire will fade along with our passion.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M009.wav|neu|2.3333|3.0|3.3333|Being dishonest with him. That kind of thing always pays off and now it's paying off.
+data/iemocap/Session1/sentences/wav/Ses01M_script03_2/Ses01M_script03_2_M013.wav|neu|3.0|3.0|3.5|Oh, you know no particular reason besides they are very small glasses.
+data/iemocap/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_M018.wav|neu|3.0|3.0|3.0|Cool, Well, If you want me to go with you, I will.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_F035.wav|xxx|2.5|2.5|2.5|Look, just give it some thought okay?
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_F010.wav|sad|2.0|2.5|2.0|I know.  Well, we'll have to figure all that out.  I mean, I think the Army's going to provide childcare and help us out with that. um.
+data/iemocap/Session5/sentences/wav/Ses05F_impro07/Ses05F_impro07_M031.wav|exc|4.0|3.5|3.5|Oh, it's going to be so much fun.
+data/iemocap/Session1/sentences/wav/Ses01F_impro05/Ses01F_impro05_M007.wav|neu|3.5|2.5|2.0|all right- okay.  And you lost your bag? Is that- that the issue?
+data/iemocap/Session4/sentences/wav/Ses04M_script03_2/Ses04M_script03_2_M037.wav|fru|2.5|3.5|3.0|I think I mentioned once before that I've only had three minute liquor glasses of brandy this whole evening.  That's hardly enough to get a child of two drunk.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_F010.wav|neu|3.0|2.5|2.5|So is it, is- is it at all possible that maybe this statement is just old and that the transaction hadn't been processed yet?
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M015.wav|fru|2.0|3.0|3.5|All right.  All right.  Listen to me.  You know why I brought Annie here don't you?
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_F035.wav|fru|1.5|4.0|4.0|Priorities honey, priorities.
+data/iemocap/Session2/sentences/wav/Ses02F_script03_2/Ses02F_script03_2_M027.wav|ang|2.5|3.5|3.0|I'm not in the least drunk.
+data/iemocap/Session2/sentences/wav/Ses02F_impro03/Ses02F_impro03_F030.wav|hap|4.5|3.5|2.25|Oh, thank you. [LAUGHTER]
+data/iemocap/Session4/sentences/wav/Ses04M_script01_1/Ses04M_script01_1_F016.wav|xxx|2.5|3.0|2.5|Well I've got an idea, but what's the story?
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_M019.wav|neu|3.0|2.5|2.5|Yeah.
+data/iemocap/Session4/sentences/wav/Ses04M_script02_2/Ses04M_script02_2_M014.wav|fru|2.5|2.5|3.0|It's just fish; nothing to get traumatized over.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_F040.wav|fru|2.3333|2.6667|4.0|Well you don't want to think like that.
+data/iemocap/Session3/sentences/wav/Ses03F_impro03/Ses03F_impro03_M011.wav|xxx|4.5|4.0|4.0|Are you kidding me?
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_F020.wav|xxx|3.5|2.5|2.0|Drinking champagne from the bottle,
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_F025.wav|fru|1.5|3.5|3.0|I don't know.  Baby, why are you asking me this?  It's just as hard for me.  Please, try to understand that.
+data/iemocap/Session5/sentences/wav/Ses05F_impro04/Ses05F_impro04_F045.wav|neu|3.0|3.0|2.5|I will, I will.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_3/Ses02F_script01_3_F016.wav|hap|4.5|5.0|4.5|I will never forgive you.  Why did you wait all these years?  All I did was sit and wonder if I was crazy for thinking of you.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_2/Ses05M_script02_2_F003.wav|xxx|2.3333|3.3333|3.3333|Sure.  Everybody is told the same thing, it keeps us all excited.  It keeps us all coming back for more.  It keeps us thinking that life is gonna start now any minute if we can just find the right spot and get in on the action.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_1/Ses03F_script02_1_M013.wav|exc|2.0|4.0|4.0|We should have brought the blanket. Oh, why didn't we bring the blanket? Our blanket.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_2/Ses03F_script01_2_M010.wav|fru|2.0|2.0|3.0|Calm yourself.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M002.wav|xxx|3.0|2.5|3.5|About four this morning.  I heard it cracking and I woke up and looked out. He was standing right here when it cracked.
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_F025.wav|sad|1.5|3.0|3.5|What could happen in a year?
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_F001.wav|xxx|3.5|3.5|3.5|How's it- going?  Oh I'm so tired.  Oh, I just woke up. Mmm.
+data/iemocap/Session4/sentences/wav/Ses04M_script01_2/Ses04M_script01_2_M014.wav|fru|2.6667|2.3333|3.0|Calm yourself.
+data/iemocap/Session5/sentences/wav/Ses05M_impro04/Ses05M_impro04_M030.wav|fru|2.5|3.0|3.5|I've tried.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_F026.wav|neu|2.5|3.0|3.0|Well how did you know that she will go along with it, I mean maybe she feels the same way as your father?
+data/iemocap/Session3/sentences/wav/Ses03M_impro06/Ses03M_impro06_F004.wav|sad|2.0|2.0|3.0|You guys were real close huh?
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M030.wav|neu|2.6667|2.6667|2.3333|Well then I guess it's over then. But from her letters I think she's forgotten him.
+data/iemocap/Session2/sentences/wav/Ses02M_impro04/Ses02M_impro04_F006.wav|neu|3.3333|2.3333|2.3333|Well, I mean you're still here you've tried for this long so I think that says something all in itself.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_2/Ses05M_script03_2_M044.wav|ang|1.0|5.0|5.0|oh! Marry you again? I wouldn't marry you again if you came crawling to me on bended knee.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_F000.wav|xxx|3.0|2.5|3.0|Fine.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_M029.wav|xxx|4.0|4.0|4.5|There's--there's a bit of the magic--some unexplainable here.  I don't see how you can not be interested.
+data/iemocap/Session2/sentences/wav/Ses02M_script02_2/Ses02M_script02_2_M025.wav|neu|2.5|3.0|3.0|Get married again?
+data/iemocap/Session1/sentences/wav/Ses01F_script02_1/Ses01F_script02_1_F017.wav|fru|2.0|3.5|3.5|Pass what up?  I mean these fish swim out of the ocean, they flop around on the beach, they swim away and then they die.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_M015.wav|neu|3.0|1.6667|2.6667|I'm going to ask her to marry me.
+data/iemocap/Session1/sentences/wav/Ses01F_impro07/Ses01F_impro07_F008.wav|xxx|4.0|3.0|3.0|Umm. It's...It's uhh...It's Critical Studies. It's a really prestigious program, so they say.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_1/Ses03F_script02_1_M004.wav|exc|4.0|4.0|4.0|Oh, though if I can't tell it probably isn't them, right? It probably would be unmistakable, wouldn't you think? Hey, how you doing?
+data/iemocap/Session5/sentences/wav/Ses05M_script01_1b/Ses05M_script01_1b_M037.wav|xxx|2.0|3.5|5.0|I'd like to build something that's my own.  And Annie is in the center of that.  Now, where do I find it?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_3/Ses05F_script01_3_F001.wav|hap|4.0|2.5|2.5|No, it's good.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_2/Ses05M_script03_2_F025.wav|fru|2.0|4.0|4.0|You're quite insufferable.  I do imagine it's because you're drunk.
+data/iemocap/Session5/sentences/wav/Ses05M_impro06/Ses05M_impro06_M017.wav|sad|2.0|2.5|2.0|No, you're right.  I don't.  You're right.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_1/Ses05F_script02_1_M002.wav|exc|4.0|3.0|2.0|Is that--no, no no is that foam?  I can't even tell, although if I- if I can't tell, it probably isn't it?  Right It'll probably be unmistakable, but don't you think?  How you doing?
+data/iemocap/Session4/sentences/wav/Ses04M_script01_1/Ses04M_script01_1_F000.wav|neu|2.5|3.5|2.0|What's he going to say?  Maybe we ought to tell him before he sees it.
+data/iemocap/Session1/sentences/wav/Ses01M_script03_1/Ses01M_script03_1_M009.wav|xxx|4.0|3.0|3.0|What shall we do if they suddenly walk in on us?
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M005.wav|neu|3.0|1.6667|2.3333|I could hear it right through the floor.
+data/iemocap/Session2/sentences/wav/Ses02M_impro04/Ses02M_impro04_F007.wav|neu|3.6667|2.3333|3.0|You are persistence. I mean that's important. that's
+data/iemocap/Session4/sentences/wav/Ses04F_impro02/Ses04F_impro02_M024.wav|sad|1.5|2.0|2.0|I don't know how else to leave it.  What, do you want me to lie to you?
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_F005.wav|sur|2.0|3.0|3.0|Next week?
+data/iemocap/Session2/sentences/wav/Ses02F_script01_3/Ses02F_script01_3_F013.wav|hap|4.0|3.0|2.5|You started to write me and--
+data/iemocap/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_F005.wav|sad|1.5|2.5|2.5|Kind of.
+data/iemocap/Session3/sentences/wav/Ses03M_impro04/Ses03M_impro04_M023.wav|fru|2.5|3.0|3.0|Sixty words.  Sixty words a minute.  Hey how are you doing Mr. Smith?  Oh, you know, it's just like God, I just want to shoot you Mr. Smith.
+data/iemocap/Session2/sentences/wav/Ses02M_impro03/Ses02M_impro03_M029.wav|xxx|4.0|3.5|4.0|You know I had my mom come along maybe help me out a little bit because she's got good taste. but
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_F040.wav|fru|2.0|2.5|3.5|I don't understand you, do I?
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_F008.wav|exc|4.0|2.5|3.0|You should...You should look into that.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_1/Ses03M_script02_1_M029.wav|xxx|2.0|3.0|2.5|For real?
+data/iemocap/Session4/sentences/wav/Ses04F_impro05/Ses04F_impro05_M007.wav|fru|3.0|2.0|3.0|At this moment in time, all I can do for you is give you-
+data/iemocap/Session3/sentences/wav/Ses03M_impro04/Ses03M_impro04_F017.wav|xxx|2.5|2.5|2.5|Just, you got to hang in there.  Can you ask your parents for help or anybody?
+data/iemocap/Session1/sentences/wav/Ses01M_impro05/Ses01M_impro05_M025.wav|ang|2.0|4.5|4.0|Well you need to find it. Can I just go back there and look through the bags?  Can I just go back there and just go through maybe I'll find it.
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_M025.wav|ang|2.0|3.5|4.0|I suppose you let him kiss you a good deal more then.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_1/Ses05M_script02_1_M031.wav|exc|4.0|5.0|4.5|And it's single mindedness with no mind. It- It's urgency, it's pure urge.  I mean, they didn't make any decisions.  They don't ask any questions.  They don't give it a name,
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M034.wav|sad|2.0|3.5|4.0|I mean, that's-that's only a little thing, but that's the kind of guys I had. They didn't just die. They killed themselves for each other. And I mean that exactly. A little more selfish and they'd still be here today.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M008.wav|xxx|3.5|2.5|2.5|No, seriously. No, seriously, you should do it.
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_F022.wav|sad|2.0|1.5|2.5|I'd rather not remember some things.  I'd rather not hope for some things.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_2/Ses05M_script02_2_M022.wav|fru|2.6667|3.3333|3.0|A vacation?
+data/iemocap/Session2/sentences/wav/Ses02M_script01_3/Ses02M_script01_3_F015.wav|xxx|4.5|4.5|4.5|I'll never forgive you.  Why did you wait all these years?  I mean, all I did was sit and wonder if I was crazy for thinking of you.
+data/iemocap/Session5/sentences/wav/Ses05M_impro02/Ses05M_impro02_F008.wav|sur|1.3333|3.3333|1.6667|What?
+data/iemocap/Session4/sentences/wav/Ses04M_impro08/Ses04M_impro08_M027.wav|neu|3.5|3.0|3.0|if you ever come out to Montgomery, I mean, you know, just -- just call up, you know, call up the operator and I'll-- I'll be here. So, um.
+data/iemocap/Session5/sentences/wav/Ses05F_impro05/Ses05F_impro05_F037.wav|fru|2.0|3.0|3.5|And you have no guarantee.
+data/iemocap/Session2/sentences/wav/Ses02M_impro02/Ses02M_impro02_M015.wav|xxx|4.0|2.5|3.0|Yeah, of course. I don't know if we'll have computers or anything like that you know, so probably my only option then.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_F009.wav|xxx|4.0|2.5|2.0|Well I guess that's why I came.
+data/iemocap/Session3/sentences/wav/Ses03M_impro03/Ses03M_impro03_M015.wav|hap|4.5|4.0|4.0|I couldn't, I couldn't afford the Red Lobster. [LAUGHTER] What anyway?
+data/iemocap/Session2/sentences/wav/Ses02M_impro03/Ses02M_impro03_M022.wav|xxx|4.0|3.5|4.0|Well, we're thinking uh - we're thinking winter time, you know, we're going to do it in the winter and then maybe, you know, maybe
+data/iemocap/Session4/sentences/wav/Ses04M_script03_2/Ses04M_script03_2_M036.wav|ang|2.0|4.0|3.5|I'm not in the least drunk.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_F012.wav|fru|2.3333|3.0|4.0|To you it is, to me it is, but to your father, you can talk yourself until you are blue in the face.  But there is no grave and there is no body, so where are you?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_M033.wav|fru|2.5|4.0|4.0|I'll get out. I'll get married and live some place else.  Maybe, maybe New York?
+data/iemocap/Session2/sentences/wav/Ses02M_script03_2/Ses02M_script03_2_F014.wav|ang|2.0|2.5|4.0|What?
+data/iemocap/Session4/sentences/wav/Ses04M_impro07/Ses04M_impro07_F037.wav|neu|3.5|4.0|3.5|No.
+data/iemocap/Session5/sentences/wav/Ses05F_impro07/Ses05F_impro07_M023.wav|xxx|4.0|3.5|4.0|Well, yeah, of course, but you're going to be working on your school stuff too, and partying that takes up a lot of time, right, especially at U.S.C., I hear it's a big party college.
+data/iemocap/Session2/sentences/wav/Ses02M_impro06/Ses02M_impro06_M022.wav|sad|2.5|3.0|3.0|Ah.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_M028.wav|hap|4.0|3.0|2.5|six four nine four. That would be so great, thank you so much.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_1/Ses01F_script01_1_F020.wav|xxx|2.3333|4.0|4.3333|Oh.  I ignore what I got to ignore.  That girl is Larry's girl.
+data/iemocap/Session5/sentences/wav/Ses05M_impro08/Ses05M_impro08_F020.wav|xxx|2.5|3.0|3.0|what happening - So if we reset this, how will I know it's not going to happen again every other week?
+data/iemocap/Session1/sentences/wav/Ses01M_impro01/Ses01M_impro01_M006.wav|fru|1.5|4.0|4.5|Yes.  I'm supposed to have three forms of ID for this.  It's a long story, I'm supposed to have three forms of ID for this other job I really don't get into but I need another...
+data/iemocap/Session2/sentences/wav/Ses02M_script02_2/Ses02M_script02_2_F029.wav|fru|2.0|4.0|4.0|This? What, what is this? This isn't even anything.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_M005.wav|neu|3.0|3.0|2.0|Carla, can I ask you something? Don't take this wrong, but are you having your period?
+data/iemocap/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_M001.wav|sad|1.5|3.0|3.0|Oh no, I'm so sorry. What happened?
+data/iemocap/Session5/sentences/wav/Ses05M_impro07/Ses05M_impro07_M003.wav|exc|5.0|3.0|2.5|I know. I know.  I'm so excited.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_M019.wav|fru|2.0|2.5|3.5|No it's not only my business.
+data/iemocap/Session3/sentences/wav/Ses03F_script03_1/Ses03F_script03_1_F017.wav|xxx|3.0|3.5|3.0|Darling, I believe you're talking nonsense.
+data/iemocap/Session3/sentences/wav/Ses03M_impro08a/Ses03M_impro08a_F006.wav|fru|1.0|4.5|4.5|This has been going on for the past two weeks.  I called every single day.  Nobody is helping me.  You guys tell me the same thing over and over, call again, call again, call again--
+data/iemocap/Session1/sentences/wav/Ses01F_impro05/Ses01F_impro05_M004.wav|neu|3.5|1.5|2.0|Okay.
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_F012.wav|xxx|2.5|2.5|4.0|No.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_M012.wav|fru|2.3333|2.3333|2.6667|I thought you wanted to see it.
+data/iemocap/Session1/sentences/wav/Ses01F_script03_1/Ses01F_script03_1_F012.wav|exc|3.5|2.0|2.0|Who's they?
+data/iemocap/Session2/sentences/wav/Ses02M_impro05/Ses02M_impro05_M021.wav|fru|3.0|4.0|4.0|You've already checked? Can you check again? [garbage]
+data/iemocap/Session2/sentences/wav/Ses02F_script03_2/Ses02F_script03_2_M038.wav|ang|1.5|3.0|4.0|Turn it off.
+data/iemocap/Session3/sentences/wav/Ses03F_script03_1/Ses03F_script03_1_M000.wav|xxx|3.0|3.0|2.5|Oh.
+data/iemocap/Session1/sentences/wav/Ses01M_script02_2/Ses01M_script02_2_M041.wav|sad|2.5|2.0|2.0|I know me neither.
+data/iemocap/Session4/sentences/wav/Ses04F_impro02/Ses04F_impro02_F001.wav|sad|1.5|1.5|2.0|I know.
+data/iemocap/Session3/sentences/wav/Ses03F_impro03/Ses03F_impro03_M020.wav|xxx|3.5|3.0|3.0|Oh, Jesus.
+data/iemocap/Session5/sentences/wav/Ses05F_impro05/Ses05F_impro05_M031.wav|neu|2.5|3.0|3.5|Well, my hands are really tied then.
+data/iemocap/Session4/sentences/wav/Ses04F_impro06/Ses04F_impro06_F001.wav|sad|2.0|3.5|3.0|You know it's just, I just, you know, I mean it just happened.  I just, like- I just keep expecting him to walk in, you know.
+data/iemocap/Session1/sentences/wav/Ses01F_impro01/Ses01F_impro01_F003.wav|xxx|2.5|3.0|3.0|You did.
+data/iemocap/Session5/sentences/wav/Ses05F_impro01/Ses05F_impro01_F019.wav|fru|2.0|4.0|4.0|Except they're going tell, are you going to tell me the right line to stand in this time at least?
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_F026.wav|fru|2.0|4.0|3.5|And-And-And if you go on from there if you know already to go on from there, then you can.  But I'm telling you something that I don't know where to go.  You got it?  I mean, do you?
+data/iemocap/Session4/sentences/wav/Ses04M_impro04/Ses04M_impro04_F005.wav|neu|3.3333|2.6667|3.0|Well, I mean, if it's that bad, maybe you're gonna have to take something that doesn't really fit, you know.  Like maybe you'll have to do something else for a while.  Find a new field, new skill.
+data/iemocap/Session5/sentences/wav/Ses05M_script03_1/Ses05M_script03_1_M015.wav|exc|3.5|4.0|4.0|uh- the- Being flippant brings out the acid in their damned beauty and light.
+data/iemocap/Session2/sentences/wav/Ses02M_impro07/Ses02M_impro07_M017.wav|exc|4.0|3.5|3.5|You know what I mean, I bet the home games, are just like nuts you know.
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_M043.wav|exc|4.5|4.5|4.0|Oh, thanks. move here before you get married [LAUGHTER]
+data/iemocap/Session4/sentences/wav/Ses04F_impro02/Ses04F_impro02_F007.wav|sad|2.0|3.0|3.5|I have to do this.  I don't want to leave.  Do you think I want to miss seeing her grow up?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_F033.wav|ang|2.0|3.0|2.5|What the hell is this?
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_F024.wav|xxx|3.0|3.5|3.5|who- Who's getting married though?
+data/iemocap/Session2/sentences/wav/Ses02F_impro06/Ses02F_impro06_F006.wav|sad|2.0|2.6667|2.3333|I mean, he was like really conscious right up until the end. you know
+data/iemocap/Session1/sentences/wav/Ses01M_script02_1/Ses01M_script02_1_M024.wav|fru|3.0|4.0|4.0|No, wait no, no that's not my point.  My point is there is no point and coming all the way down here if we just turn around and go home.
+data/iemocap/Session2/sentences/wav/Ses02F_impro03/Ses02F_impro03_F016.wav|hap|4.25|3.0|2.75|...and, um, my parents want to like be part of it and help out and everything--So we want to give it lots of time to like--
+data/iemocap/Session4/sentences/wav/Ses04F_impro04/Ses04F_impro04_F014.wav|ang|1.5|4.5|4.5|I mean it's not like this is an
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_F004.wav|exc|4.0|3.5|3.0|That is incredible.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_M015.wav|fru|3.0|3.5|3.5|Listen mom, just, sit down.  I want to talk to you.
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_M018.wav|exc|3.5|3.5|3.0|I just got into it. I just kind of fell into it. Literally I was walking around and...
+data/iemocap/Session4/sentences/wav/Ses04M_impro08/Ses04M_impro08_M006.wav|neu|2.5|3.0|3.0|I am seeing the two hundred dollar charge.
+data/iemocap/Session2/sentences/wav/Ses02M_impro05/Ses02M_impro05_F002.wav|neu|3.0|2.5|2.5|Okay. Well, um- the f.
+data/iemocap/Session5/sentences/wav/Ses05M_script01_3/Ses05M_script01_3_F012.wav|hap|4.5|3.0|2.5|Everyday since.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_M023.wav|fru|2.0|3.0|2.6667|Do you want to get married again? What? What? Do you want to get a divorce?
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_M045.wav|xxx|2.5|2.5|2.0|It's not champagne.
+data/iemocap/Session3/sentences/wav/Ses03M_impro05a/Ses03M_impro05a_M029.wav|ang|3.0|2.5|3.5|My name is Brent Caption.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_2/Ses02F_script02_2_M026.wav|fru|2.0|3.5|3.0|What?  What?  You want a divorce?
+data/iemocap/Session4/sentences/wav/Ses04F_script01_2/Ses04F_script01_2_F010.wav|ang|2.5|3.5|4.0|Because she knows what I know that's why.  She's faithful as a rock.
+data/iemocap/Session3/sentences/wav/Ses03M_impro02/Ses03M_impro02_M037.wav|fru|2.0|3.0|3.5|Fine.  I'll see if I can talk to them.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_F031.wav|exc|3.5|4.0|3.5|Right.  Now you're with me.
+data/iemocap/Session3/sentences/wav/Ses03M_impro08a/Ses03M_impro08a_F033.wav|fru|2.5|2.5|3.5|Okay.  Sara what?
+data/iemocap/Session1/sentences/wav/Ses01M_impro06/Ses01M_impro06_M001.wav|sad|3.0|2.0|3.0|Just kind of feel numb, you know.
+data/iemocap/Session2/sentences/wav/Ses02F_script01_1/Ses02F_script01_1_M006.wav|xxx|2.5|2.5|2.5|I guess he is.
+data/iemocap/Session4/sentences/wav/Ses04M_impro02/Ses04M_impro02_M034.wav|fru|2.5|2.5|3.5|You have to.  Do you understand me?  You have to.
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_F013.wav|xxx|2.5|2.5|3.0|Don't be so stupid.
+data/iemocap/Session3/sentences/wav/Ses03M_impro08b/Ses03M_impro08b_F010.wav|fru|2.0|3.5|4.5|No- I don't have a sim card because it's Verizon and you guys don't use sim cards.
+data/iemocap/Session4/sentences/wav/Ses04M_impro05/Ses04M_impro05_F025.wav|fru|3.0|2.5|2.5|I can write you the one check.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M008.wav|xxx|3.0|2.5|2.5|Well, uh- would you want to?
+data/iemocap/Session3/sentences/wav/Ses03F_script03_2/Ses03F_script03_2_M012.wav|neu|3.0|3.5|3.0|No particular reason. Anyhow, they were very small ones.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_M003.wav|exc|4.0|3.0|3.5|How you doing?
+data/iemocap/Session5/sentences/wav/Ses05M_script01_2/Ses05M_script01_2_M009.wav|fru|1.6667|3.6667|3.0|Well, what do you want me to do about it?  What do you want?
+data/iemocap/Session3/sentences/wav/Ses03M_impro05a/Ses03M_impro05a_F006.wav|fru|3.5|2.0|2.5|I'm asking you if this is direct flight from Baltimore to LAX or if you have to stop--
+data/iemocap/Session2/sentences/wav/Ses02M_script01_1/Ses02M_script01_1_M042.wav|fru|2.5|3.0|4.0|Then help me stay here.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_F015.wav|fru|2.0|2.5|3.5|Ah, Augie.
+data/iemocap/Session1/sentences/wav/Ses01F_impro06/Ses01F_impro06_M010.wav|neu|3.0|2.5|3.0|Oh really?
+data/iemocap/Session3/sentences/wav/Ses03F_script01_2/Ses03F_script01_2_F017.wav|xxx|1.0|4.5|3.5|You got to believe, believe with me because I can't stand all alone.
+data/iemocap/Session3/sentences/wav/Ses03M_impro03/Ses03M_impro03_F017.wav|hap|3.5|3.5|3.0|You had the mouse?
+data/iemocap/Session2/sentences/wav/Ses02F_script02_2/Ses02F_script02_2_F016.wav|sad|4.0|4.0|3.5|I thought I was pregnant, you had a bottle of champagne, but no glasses.  You asked me to dance, so we kicked off our shoes and you popped the cork.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_2/Ses01M_script01_2_F007.wav|xxx|2.0|3.0|4.5|Because she knows what I know that's why.  She's faithful as a rock. in my darkest moments I think of her waiting and I know that I'm right.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M040.wav|xxx|2.3333|2.3333|2.3333|And I thought that if I waited then dad would forget about Larry and then we could have a regular wedding and everything happy.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_2/Ses03F_script02_2_F012.wav|ang|1.6667|3.3333|3.6667|Like I feel like my whole life I've been just standing on this beach with my hands clasped waiting for these fish to show up and these fish never show up.
+data/iemocap/Session3/sentences/wav/Ses03M_script02_1/Ses03M_script02_1_M027.wav|exc|2.0|4.0|4.5|Okay.  But it's fish that do something that no other fish do.  Like the swallows in Capistrano or the Lemmings that throw themselves off the cliffs, there's magic here and some mystery and a little bit of unexplainable.
+data/iemocap/Session1/sentences/wav/Ses01M_impro05/Ses01M_impro05_F020.wav|neu|3.5|3.5|4.0|It's not.  I can offer you fifty dollars and a reimbursement gift cards for our airline...
+data/iemocap/Session4/sentences/wav/Ses04M_impro04/Ses04M_impro04_M021.wav|neu|2.6667|2.6667|2.3333|That's not true.  I take responsibility for my own actions.
+data/iemocap/Session1/sentences/wav/Ses01M_impro05/Ses01M_impro05_M017.wav|xxx|1.5|4.0|3.5|It's gone.
+data/iemocap/Session1/sentences/wav/Ses01M_script03_2/Ses01M_script03_2_M037.wav|ang|2.0|3.0|4.5|Turn it off.
+data/iemocap/Session1/sentences/wav/Ses01F_impro04/Ses01F_impro04_F008.wav|xxx|2.0|3.5|3.5|He got it?
+data/iemocap/Session1/sentences/wav/Ses01M_script02_1/Ses01M_script02_1_F002.wav|sur|2.0|2.5|3.5|What flashlight?
+data/iemocap/Session3/sentences/wav/Ses03M_impro05a/Ses03M_impro05a_F007.wav|neu|2.5|3.0|3.0|You're at me and I'm going to try to help you out sir but you just have to cooperate with me--
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_F023.wav|sad|1.0|3.5|2.0|I know.  I know it's not fair.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_1/Ses01M_script01_1_M015.wav|fru|3.0|2.6667|2.0|Yeah, okay all right, all right.  Listen, um, you know why I asked Annie here, right?
+data/iemocap/Session2/sentences/wav/Ses02F_impro05/Ses02F_impro05_M014.wav|neu|2.5|3.0|3.0|No, um, like I said you can file a claim and, uh, maybe get reimbursed for more-- you
+data/iemocap/Session5/sentences/wav/Ses05M_impro03/Ses05M_impro03_F027.wav|neu|3.3333|2.6667|2.6667|Yeah, have you ever like lived with someone else before?
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_F018.wav|fru|2.0|3.5|2.5|I don't know, I'm just--I'm trying to think of something.
+data/iemocap/Session2/sentences/wav/Ses02M_script01_2/Ses02M_script01_2_F016.wav|fru|2.3333|3.0|3.0|Don't stop believing.
+data/iemocap/Session3/sentences/wav/Ses03M_script03_2/Ses03M_script03_2_F036.wav|neu|3.0|2.5|3.5|They are away in Tunis.
+data/iemocap/Session1/sentences/wav/Ses01F_script03_2/Ses01F_script03_2_M000.wav|xxx|3.5|3.5|3.0|We were very much younger then.
+data/iemocap/Session5/sentences/wav/Ses05M_impro05/Ses05M_impro05_M020.wav|fru|2.0|4.0|3.0|I mean, some information here would be great.  Some help.  Can you, like, type something in and find out?
+data/iemocap/Session4/sentences/wav/Ses04M_impro05/Ses04M_impro05_M039.wav|ang|2.0|3.5|3.5|I'm already calm. Okay, I'm calm. I'm calm.
+data/iemocap/Session3/sentences/wav/Ses03M_impro07/Ses03M_impro07_M013.wav|exc|5.5|5.0|2.0|I have some bad news.  I was like what?  She's like not really you got into U.S.C. and I was like, I was like oh my God.  I was about to tear my own hair out.
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F029.wav|hap|4.0|3.5|4.0|Right, being like oh, where are you from?  The U.S.  Where in the U.S.?  Chicago.  Where in Chicago?
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F002.wav|exc|4.5|3.0|4.0|Yeah.
+data/iemocap/Session1/sentences/wav/Ses01M_impro02/Ses01M_impro02_M003.wav|sad|2.0|2.5|3.0|First thing tomorrow morning.
+data/iemocap/Session3/sentences/wav/Ses03M_impro03/Ses03M_impro03_M001.wav|exc|4.0|4.0|3.0|Esmeralda, guess what?
+data/iemocap/Session4/sentences/wav/Ses04F_script03_1/Ses04F_script03_1_M019.wav|xxx|3.0|3.0|3.0|It all depends on how well we've played.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_2/Ses04F_script02_2_M031.wav|fru|1.5|4.0|4.5|Do you think that when I proposed, I had this great fantasy going that four years down the line we'd come to the beach and yell at each other over fish.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_3/Ses05F_script01_3_F008.wav|neu|3.5|2.5|3.0|Well, from her point of view why else would I come?
+data/iemocap/Session4/sentences/wav/Ses04F_script03_1/Ses04F_script03_1_M003.wav|xxx|3.0|2.5|3.5|We'll be alright, darling.  Whatever happens, aren't we?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_F007.wav|sad|2.5|2.5|3.0|It's getting just like after Larry died, he's having dreams, he's walking around at night.
+data/iemocap/Session2/sentences/wav/Ses02M_impro03/Ses02M_impro03_M013.wav|xxx|4.0|3.5|3.5|So I got the band to do something, you know, like towards the end of the song I got to go up on stage and, uh
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_M039.wav|sur|1.5|4.0|1.0|Three weeks?
+data/iemocap/Session5/sentences/wav/Ses05F_impro07/Ses05F_impro07_M018.wav|exc|3.5|3.0|4.0|We should try to find, like, a party spot though, like you know where there's going to be a lot of parties, where there are cool people, though.  Do you know any people that might be out there?
+data/iemocap/Session4/sentences/wav/Ses04M_script03_1/Ses04M_script03_1_M013.wav|ang|2.5|4.0|4.5|All the futile moralists who try to make life unbearable.  Laugh at them.  Be flippant.  Laugh at everything.  All their sacred shibboleths.  Flippancy brings out the acid- acid in their damn sweetness and light.
+data/iemocap/Session5/sentences/wav/Ses05F_script03_1/Ses05F_script03_1_F013.wav|neu|3.0|2.5|2.5|Who's they?
+data/iemocap/Session1/sentences/wav/Ses01M_script02_2/Ses01M_script02_2_F045.wav|hap|4.0|2.0|2.0|I'm beginning to think you might be right.  I think this might be the spot after all.
+data/iemocap/Session4/sentences/wav/Ses04M_script02_1/Ses04M_script02_1_M032.wav|exc|3.5|4.0|2.5|They don't know what drives them.  They don't give it a name or ask a question.  They just turn, as one, and start the swim that brings them here; to this place, where we stand, for a massive celebration of sex and death.  Oh, man, I'm giving myself goose bumps.  All my hairs are popping up.
+data/iemocap/Session2/sentences/wav/Ses02M_impro02/Ses02M_impro02_M010.wav|xxx|2.5|2.5|3.0|No, it doesn't work that way
+data/iemocap/Session5/sentences/wav/Ses05M_impro08/Ses05M_impro08_M002.wav|neu|3.0|2.5|2.5|You've lost your connection.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_2/Ses05F_script02_2_F015.wav|hap|3.0|2.0|3.5|And I remember thinking, Finally, finally.  I am as happy as I am supposed to be.
+data/iemocap/Session2/sentences/wav/Ses02M_script02_2/Ses02M_script02_2_F010.wav|fru|1.5|4.0|4.5|No we won't; it's pointless. It's like waiting up to see Santa Claus,
+data/iemocap/Session5/sentences/wav/Ses05M_script01_3/Ses05M_script01_3_M023.wav|sad|2.5|2.5|2.5|It's so mixed up with so many other things.
+data/iemocap/Session4/sentences/wav/Ses04M_script01_1/Ses04M_script01_1_M029.wav|fru|1.5|4.5|3.5|Because it is.
+data/iemocap/Session1/sentences/wav/Ses01M_impro03/Ses01M_impro03_M018.wav|neu|3.0|2.0|2.5|Just cash hardcore.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_1/Ses05F_script02_1_M008.wav|xxx|4.0|2.5|2.0|Well, I hope the moon stays out.  Well, I wonder do they always wander during a full moon?  I can't remember, wasn't it full last year?  Do you remember?
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M050.wav|neu|3.0|3.0|2.0|Okay. Just-
+data/iemocap/Session4/sentences/wav/Ses04M_impro07/Ses04M_impro07_F009.wav|exc|4.0|4.0|4.0|I know.  It's a great school and you know
+data/iemocap/Session4/sentences/wav/Ses04F_script02_2/Ses04F_script02_2_F022.wav|sad|3.0|4.0|4.0|And I remember thinking this is it.  At last, at last I'm as happy as I'm supposed to be.
+data/iemocap/Session5/sentences/wav/Ses05F_impro04/Ses05F_impro04_F009.wav|fru|1.5|3.0|4.0|I mean I can do the McDonald's thing for a while as humiliating as that is, but I mean then what?  I mean You can't exactly move up in that kind of industry.
+data/iemocap/Session3/sentences/wav/Ses03M_impro03/Ses03M_impro03_F007.wav|xxx|4.0|3.0|2.5|Yeah.  Well...
+data/iemocap/Session5/sentences/wav/Ses05M_script03_1/Ses05M_script03_1_F001.wav|exc|2.5|4.0|3.0|what, Nobody knows we are here except Freda and she wouldn't ring up.
+data/iemocap/Session4/sentences/wav/Ses04M_script02_2/Ses04M_script02_2_F017.wav|xxx|4.0|3.5|4.0|And while we were dancing, you said the softest, most intimate things to me, right into my ear so that I could feel them as much as hear them.  And I remember thinking this is it.  At last, at last I'm as happy as I'm supposed to be.
+data/iemocap/Session3/sentences/wav/Ses03M_script03_2/Ses03M_script03_2_M032.wav|ang|2.5|2.5|3.5|We might be able to bring up a splendid little debate about this intemperate tots.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_1/Ses05F_script02_1_M013.wav|xxx|4.0|3.0|2.5|Are you kidding?  We'd miss it. We just got here, what's the point of coming out here if we are just going to leave.
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F021.wav|xxx|4.0|3.0|3.5|So next fall I guess.
+data/iemocap/Session2/sentences/wav/Ses02M_impro03/Ses02M_impro03_M007.wav|xxx|4.0|3.0|4.0|Well, yes, I wanted it you know I guess sort of as a surprise for everyone so
+data/iemocap/Session1/sentences/wav/Ses01M_impro04/Ses01M_impro04_M009.wav|fru|2.0|4.5|4.5|Like it's really hard to like shake that off when you go into like audition a room or whatever, you know what I mean?
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_M041.wav|ang|2.0|3.0|4.5|Yes.  I like it an hour out of the day.  If I have to grub for money all day long at least at evening I want it beautiful.  I want a family.  I want a wife.  I want some kids.  I want to build something I can give myself to.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_1/Ses05M_script02_1_M000.wav|exc|5.0|4.5|4.0|What time is it?  They're supposed to run around midnight.  Oh, this is great, isn't it?  Look at the night we've got here.  It couldn't be better.  Actually, I wanted to go a little further up the coast you know to get away from all the lights and the people.  I was afraid we might miss it though, so how are you doing?
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_M011.wav|xxx|3.0|3.5|4.0|How could we forget to bring it?  I hope the moon stays out.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_1/Ses02F_script02_1_M040.wav|exc|3.5|3.5|4.5|It's like single mindedness with no mind.  It's urgency that's pure urge.  They don't know what drives them.  They don't ask it a question or give it a name.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M066.wav|neu|4.0|2.5|2.5|Fine.  It's dorky.
+data/iemocap/Session5/sentences/wav/Ses05F_impro04/Ses05F_impro04_F015.wav|sad|2.0|2.0|3.5|I'm just so scared to start over I mean.  I put so much time and energy into being here.
+data/iemocap/Session5/sentences/wav/Ses05M_impro02/Ses05M_impro02_M012.wav|sad|1.3333|4.0|3.0|tell them about me and show them pictures of me and everything like that, because they are not going to see me for such a long time.  And it's such an important time and I just don't want to miss it.
+data/iemocap/Session3/sentences/wav/Ses03F_impro01/Ses03F_impro01_F000.wav|xxx|2.6667|3.6667|3.3333|God, finally I got to the line, the front of the line. I've been waiting there for like half an hour.
+data/iemocap/Session1/sentences/wav/Ses01F_script01_3/Ses01F_script01_3_F022.wav|neu|3.3333|1.6667|3.0|Like Larry's brother.  Do it like you, Chris.
+data/iemocap/Session4/sentences/wav/Ses04F_impro08/Ses04F_impro08_M025.wav|fru|2.0|2.5|3.0|You know what.  I- You know what? You know what? No, it's fine. it's fine it's fine You know what?
+data/iemocap/Session1/sentences/wav/Ses01F_script03_2/Ses01F_script03_2_M026.wav|ang|2.0|4.5|4.5|I think I mentioned once before that I've had three minute liquor glasses the whole evening long.  A child of two cannot get drunk on that.
+data/iemocap/Session5/sentences/wav/Ses05M_script02_2/Ses05M_script02_2_F018.wav|sad|2.3333|2.3333|1.6667|No.
+data/iemocap/Session4/sentences/wav/Ses04F_script02_1/Ses04F_script02_1_M010.wav|neu|2.5|2.5|2.5|Are you cold?  Do you want my jacket?  We should have brought the blanket, our blanket.
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M061.wav|neu|3.5|2.5|3.0|or, um, campus cruiser.  You can drive people around.
+data/iemocap/Session5/sentences/wav/Ses05F_script02_2/Ses05F_script02_2_M013.wav|fru|3.0|3.5|3.0|Okay, I been trying to work this backwards but I can't seem to pinpoint a moment when we took a turn for the worst here.
+data/iemocap/Session2/sentences/wav/Ses02F_impro07/Ses02F_impro07_F028.wav|exc|4.0|4.0|3.5|Student. I'm a student. Yes I am, Thank you very much.
+data/iemocap/Session1/sentences/wav/Ses01F_script02_2/Ses01F_script02_2_M032.wav|fru|1.5|4.0|4.0|Do you know what you get?  You get this.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_M026.wav|xxx|2.5|2.5|3.0|I want to get this settled first.
+data/iemocap/Session4/sentences/wav/Ses04F_script01_1/Ses04F_script01_1_F005.wav|xxx|2.0|2.5|3.0|He cried hard?
+data/iemocap/Session1/sentences/wav/Ses01F_script02_1/Ses01F_script02_1_M020.wav|neu|4.0|3.0|2.5|Right.
+data/iemocap/Session4/sentences/wav/Ses04M_script03_2/Ses04M_script03_2_F036.wav|ang|2.0|3.5|2.5|Why?
+data/iemocap/Session5/sentences/wav/Ses05F_script02_1/Ses05F_script02_1_M021.wav|exc|4.5|3.5|2.5|This is a big night for these guys.  Life's last orgy. Yeah
+data/iemocap/Session4/sentences/wav/Ses04M_script01_2/Ses04M_script01_2_F018.wav|ang|2.6667|3.3333|4.0|You, above all, have got to believe.  You.
+data/iemocap/Session2/sentences/wav/Ses02M_script03_2/Ses02M_script03_2_F038.wav|ang|1.0|5.0|5.0|Stop it. Stop it. I hate you, do you hear? You're overbearing and conceited and utterly impossible.
+data/iemocap/Session4/sentences/wav/Ses04F_script03_1/Ses04F_script03_1_M018.wav|xxx|3.0|3.5|3.5|No that fire will fade long with our passion.
+data/iemocap/Session4/sentences/wav/Ses04M_script02_2/Ses04M_script02_2_F014.wav|xxx|1.5|4.0|5.0|For heaven's sake, this is not about fish.
+data/iemocap/Session3/sentences/wav/Ses03M_script03_1/Ses03M_script03_1_M022.wav|xxx|3.5|2.5|3.0|Oh, and who isn't talking nonsense?
+data/iemocap/Session4/sentences/wav/Ses04M_impro01/Ses04M_impro01_M024.wav|ang|1.5|3.5|4.0|Okay, fine.  I'll go over there.  Thanks, a lot.  You've been really helpful.
+data/iemocap/Session1/sentences/wav/Ses01M_script02_1/Ses01M_script02_1_M011.wav|neu|2.5|3.5|3.0|Gosh, I should have brought it. I can't believe I forgot that.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_M002.wav|fru|2.5|4.0|3.5|I put- I've been typing my number in millions of times, it won't listen to me, it's not working, and I can't get a single human being, and finally-
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M062.wav|neu|3.5|2.5|3.0|Right or you can run for student counsel.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_F016.wav|xxx|3.0|2.0|2.5|why?
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_M018.wav|fru|4.0|3.0|3.5|Oh, yes it is.
+data/iemocap/Session5/sentences/wav/Ses05F_impro08/Ses05F_impro08_F012.wav|neu|3.0|1.5|2.0|Okay.
+data/iemocap/Session3/sentences/wav/Ses03M_impro05b/Ses03M_impro05b_F030.wav|neu|3.0|3.5|2.0|Some refreshments in the lobby?
+data/iemocap/Session3/sentences/wav/Ses03M_script02_2/Ses03M_script02_2_F013.wav|ang|1.6667|4.6667|3.6667|Listen, I've waiting my entire life on this beach just standing there waiting for this fish to show up and these fish never show up.
+data/iemocap/Session2/sentences/wav/Ses02M_script03_1/Ses02M_script03_1_F009.wav|xxx|2.5|2.0|3.0|It's true; the whole business is a very poor joke.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_1/Ses05F_script01_1_M014.wav|fru|2.5|3.5|3.5|Sit down, mom.  I want to talk to you.
+data/iemocap/Session5/sentences/wav/Ses05M_impro07/Ses05M_impro07_M017.wav|exc|4.0|2.5|2.5|[garbage] I'm going to live on campus.  I mean, well, around campus, anyway.  Yeah, housing around campus.
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_M042.wav|ang|2.0|4.0|4.5|You are a vile tempered, loose living, wicked little beast, and I never want to set eyes on you again.
+data/iemocap/Session3/sentences/wav/Ses03M_impro06/Ses03M_impro06_F011.wav|sad|3.0|2.5|4.0|We're all here for you.
+data/iemocap/Session2/sentences/wav/Ses02F_script03_2/Ses02F_script03_2_F003.wav|xxx|3.0|2.5|3.0|No, I didn't.  You worked the whole thing up in your jealous imagination.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_3/Ses03F_script01_3_M040.wav|sad|1.5|3.0|4.5|And I felt wrong to be alive. To drive the car, to see the new checkbook, to see the new refrigerator. I mean, you can take those things out of the war. But you got to know that when you drive that car that that came out of the love a man can have for another man. And you got to be a little bit better because of that.
+data/iemocap/Session2/sentences/wav/Ses02F_script02_2/Ses02F_script02_2_F037.wav|xxx|3.0|3.5|3.5|Oh, don't be ridiculous.  I mean, don't you know that?
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_F025.wav|sad|2.0|1.5|2.0|[BREATHING]. Geez.
+data/iemocap/Session5/sentences/wav/Ses05M_script01_1/Ses05M_script01_1_F030.wav|xxx|2.5|2.0|3.0|Just give it some more thought.
+data/iemocap/Session4/sentences/wav/Ses04F_script01_3/Ses04F_script01_3_F011.wav|xxx|3.0|2.5|3.5|I almost got married two years ago.
+data/iemocap/Session1/sentences/wav/Ses01M_impro07/Ses01M_impro07_M029.wav|xxx|3.5|3.0|2.0|That kind of...They're okay.  No I'm like- I'm kind of like the odd man out I'm like...
+data/iemocap/Session3/sentences/wav/Ses03F_script01_2/Ses03F_script01_2_F008.wav|xxx|2.0|3.5|3.0|I'm sure hundreds of them asked her and told her that she's foolish, but no.
+data/iemocap/Session4/sentences/wav/Ses04M_impro07/Ses04M_impro07_F017.wav|exc|4.5|4.0|4.0|Well congratulations.
+data/iemocap/Session2/sentences/wav/Ses02M_impro07/Ses02M_impro07_F017.wav|hap|3.5|3.0|3.5|Like you get to be a part of that. Like the, like the- Like a cult.
+data/iemocap/Session3/sentences/wav/Ses03M_script03_2/Ses03M_script03_2_M011.wav|ang|2.5|3.0|3.0|No particular reason.  Anyhow they were very small ones.
+data/iemocap/Session3/sentences/wav/Ses03M_impro03/Ses03M_impro03_F037.wav|xxx|2.5|2.5|2.5|Oh man.
+data/iemocap/Session3/sentences/wav/Ses03F_script02_1/Ses03F_script02_1_F000.wav|sad|3.5|3.0|2.5|Fine.
+data/iemocap/Session5/sentences/wav/Ses05F_impro02/Ses05F_impro02_M014.wav|ang|1.5|3.5|2.5|I don't understand why they would just do something like this?
+data/iemocap/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_F002.wav|xxx|2.5|3.0|3.5|No, not at all.  I-I still have it.  I wear it quite often.
+data/iemocap/Session4/sentences/wav/Ses04F_script03_2/Ses04F_script03_2_M034.wav|ang|2.5|3.0|3.0|There are people downstairs I suppose.
+data/iemocap/Session3/sentences/wav/Ses03M_script01_1/Ses03M_script01_1_F002.wav|sur|2.0|3.5|3.0|When?
+data/iemocap/Session5/sentences/wav/Ses05M_script01_2/Ses05M_script01_2_M013.wav|fru|3.0|3.3333|3.3333|All right.  All right.
+data/iemocap/Session1/sentences/wav/Ses01F_script03_2/Ses01F_script03_2_M017.wav|xxx|2.5|2.0|3.0|That reply has broken my heart.
+data/iemocap/Session4/sentences/wav/Ses04F_script01_2/Ses04F_script01_2_M007.wav|neu|3.0|3.0|1.5|Uh, Then why is she still-she's not his girl, Joe
+data/iemocap/Session2/sentences/wav/Ses02M_impro06/Ses02M_impro06_M005.wav|sad|1.5|2.5|3.5|Yes. I mean, it's not as rough on me as it is on him but
+data/iemocap/Session4/sentences/wav/Ses04M_script01_1/Ses04M_script01_1_F032.wav|neu|3.0|2.0|2.5|Yes we did. Do you want to keep going?
+data/iemocap/Session1/sentences/wav/Ses01M_impro01/Ses01M_impro01_M018.wav|fru|1.5|4.5|4.5|On top of these other two forms of ID which I already have.
+data/iemocap/Session5/sentences/wav/Ses05F_impro03/Ses05F_impro03_F050.wav|xxx|4.0|2.5|2.5|yeah.
+data/iemocap/Session1/sentences/wav/Ses01M_impro06/Ses01M_impro06_M030.wav|sad|1.5|3.0|4.5|"like I can't...it's like you know it's like ""pinch me"" it's like I can't believe like I'm dealing with this, you know."
+data/iemocap/Session1/sentences/wav/Ses01M_impro06/Ses01M_impro06_F008.wav|neu|2.5|2.0|2.5|how was sick?
+data/iemocap/Session1/sentences/wav/Ses01F_impro01/Ses01F_impro01_F002.wav|neu|2.5|2.5|2.5|Is there a problem?
+data/iemocap/Session3/sentences/wav/Ses03F_impro02/Ses03F_impro02_M014.wav|sad|1.5|3.5|1.5|I have to work.
+data/iemocap/Session1/sentences/wav/Ses01M_script01_3/Ses01M_script01_3_M030.wav|sad|1.5|2.0|2.0|He just put it in my pocket that's the kind of guys I had.
+data/iemocap/Session5/sentences/wav/Ses05M_impro02/Ses05M_impro02_F004.wav|xxx|2.0|3.3333|3.0|And they didn't care?
+data/iemocap/Session3/sentences/wav/Ses03M_script03_2/Ses03M_script03_2_F023.wav|xxx|2.0|3.5|4.5|Well it really hasn't worked wonders with you.
+data/iemocap/Session3/sentences/wav/Ses03F_script01_1/Ses03F_script01_1_M002.wav|neu|3.0|3.0|2.6667|Um, about four this morning. Uh- I heard a crack and I looked out and I saw him standing there.
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_F020.wav|xxx|3.5|3.0|3.0|No.  No browns.
+data/iemocap/Session1/sentences/wav/Ses01M_impro02/Ses01M_impro02_M012.wav|sad|3.0|1.5|1.5|I don't know.
+data/iemocap/Session5/sentences/wav/Ses05M_impro07/Ses05M_impro07_F008.wav|hap|4.0|2.5|2.5|That's awesome.
+data/iemocap/Session4/sentences/wav/Ses04M_impro08/Ses04M_impro08_M024.wav|neu|3.5|3.0|2.5|You know, so- I mean, are you doing anything later?  Or um
+data/iemocap/Session4/sentences/wav/Ses04F_impro07/Ses04F_impro07_M004.wav|xxx|4.0|3.5|3.5|Oh, my god what happened.  You got in. Otherwise you wouldn't be so happy. [LAUGHTER]
+data/iemocap/Session1/sentences/wav/Ses01F_script03_2/Ses01F_script03_2_M006.wav|xxx|2.0|2.5|3.0|What of it?
+data/iemocap/Session5/sentences/wav/Ses05F_script01_3/Ses05F_script01_3_M029.wav|sad|3.5|4.0|4.0|I know that- that's not a big thing, but it's just the kind of guys I had. They didn't die. They- They killed themselves for each other.
+data/iemocap/Session1/sentences/wav/Ses01M_script03_1/Ses01M_script03_1_F009.wav|hap|4.0|2.5|2.5|[LAUGHTER] I think I shall do a court curtsey.
+data/iemocap/Session2/sentences/wav/Ses02M_impro05/Ses02M_impro05_F016.wav|neu|3.0|2.5|2.5|Um, so.
+data/iemocap/Session4/sentences/wav/Ses04M_script01_1/Ses04M_script01_1_F006.wav|xxx|2.0|3.0|2.5|What was he doing out here at that hour?  He's dreaming about him again.  He's walking around at night.
+data/iemocap/Session4/sentences/wav/Ses04M_impro02/Ses04M_impro02_M009.wav|fru|2.5|3.0|2.0|And this is what I do.  This is -- I mean, this is my life.  And I know that you're part of my life, too, and I mean, it's only -- it's just going to be a year.  I'll be back.
+data/iemocap/Session4/sentences/wav/Ses04F_impro03/Ses04F_impro03_M034.wav|neu|3.5|2.5|3.5|Fried chicken, mashed potatoes.
+data/iemocap/Session5/sentences/wav/Ses05F_script01_2/Ses05F_script01_2_M014.wav|fru|2.5|3.5|4.0|All right, all right.  Calm yourself.
+data/iemocap/Session2/sentences/wav/Ses02M_script02_1/Ses02M_script02_1_F022.wav|fru|2.0|2.5|2.5|It's ridiculous.
+data/iemocap/Session3/sentences/wav/Ses03M_impro05a/Ses03M_impro05a_F004.wav|fru|3.0|3.5|2.5|Alright.  And you're coming-- Wait, hold on sir.  You're coming from Baltimore into LAX right?
+data/iemocap/Session1/sentences/wav/Ses01F_script01_2/Ses01F_script01_2_F004.wav|ang|2.5|2.5|3.5|It's got that about it.
+data/iemocap/Session5/sentences/wav/Ses05F_impro07/Ses05F_impro07_M005.wav|exc|3.5|3.0|3.5|Are you going to live on campus?  Where are you going to live?
+data/iemocap/Session2/sentences/wav/Ses02F_script01_3/Ses02F_script01_3_F000.wav|xxx|4.0|3.0|3.0|You're the only one I know who loves his parents.
