@@ -70,10 +70,10 @@ class EmbedNet(nn.Module):
         x = F.relu(x)
         x = self.fc1(x)
         x = F.relu(x)
-        x = self.fc2(x)
-        x = F.relu(x)
+        embedding = self.fc2(x)
+        x = F.relu(embedding)
         x = self.fc3(x)
-        return x
+        return x, embedding
 
 if __name__ == '__main__':
     dim = 91
