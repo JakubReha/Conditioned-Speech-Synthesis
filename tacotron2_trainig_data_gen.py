@@ -1,6 +1,5 @@
 import numpy as np
 import csv
-from tqdm import tqdm
 import os
 import random
 
@@ -10,16 +9,17 @@ def getPath(iemocap_main_dir, name):
     return os.path.join(iemocap_main_dir, session, 'sentences', 'wav', folder_name, name + '.wav')
     
 def writeToFile(outdir, filename, items):
-    with open(os.path.join(outdir,filename),"w") as f:
+    with open(os.path.join(outdir, filename), "w") as f:
         f.writelines(items)
 
 def main():
     iemocap_main_dir = '..\\iemocap\\iemocap\\'
     items = []
     test_split = 0.05
-    val_split = 0.1
-    train_split = 1-(test_split+val_split)
+    val_split = 0.15
+    train_split = 1 - (test_split+val_split)
     n_items = 0
+    random.seed(1)
     with open(os.path.join(iemocap_main_dir, 'metadata.csv'), "r") as f:
         metadata = csv.reader(f)
         next(metadata, None)
@@ -30,7 +30,6 @@ def main():
             items.append("|".join([filepath, text]))
     
     random.shuffle(items)
-    
     train_items = items[0:int(np.round(n_items*train_split))]
     test_items = items[int(np.round(n_items*train_split)):int(np.round(n_items*train_split)+np.round(n_items*val_split))]
     val_items = items[int(np.round(n_items*train_split)+np.round(n_items*val_split)):]
