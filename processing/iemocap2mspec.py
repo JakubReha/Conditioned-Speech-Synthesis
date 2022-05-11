@@ -1,4 +1,3 @@
-import numpy as np
 import csv
 import sys
 import torch
@@ -14,7 +13,7 @@ PATH_TO_DATA="data"
 OUT_DIR = f"{PATH_TO_DATA}/melspec"
 
 MAX_WAV_VALUE=32768.0
-SAMPLING_RATE=22050
+SAMPLING_RATE=16000
 FILTER_LENGTH=1024
 HOP_LENGTH=256
 WIN_LENGTH=1024
@@ -22,9 +21,7 @@ N_MEL_CHANNELS=80
 MEL_FMIN=0.0
 MEL_FMAX=8000.0
 
-# TODO: Adjust parameters for melspec extraction (sampling_rate)
-# TODO: Make sure melspec_extraction works
-# TODO: Complete dataset class and data loaders
+# TODO: Adjust parameters for melspec extraction
 
 def extract_melspec(path_to_wav):
     stft = TacotronSTFT(FILTER_LENGTH, HOP_LENGTH, WIN_LENGTH, N_MEL_CHANNELS, SAMPLING_RATE, MEL_FMIN, MEL_FMAX)
@@ -43,20 +40,31 @@ def main():
         os.mkdir(OUT_DIR)
 
     for split in ["train", "test", "val"]:
+        print("##############################################################")
+        print(f"- Extracting Mel Spectogram features into {OUT_DIR}/{split} -")
+        print("##############################################################")
         if not os.path.exists(f"{OUT_DIR}/{split}"):
             os.mkdir(f"{OUT_DIR}/{split}")
 
+        total_count = 0
         with open(f"{PATH_TO_DATA}/splits/{split}.csv") as split_f:
-            processed_count = 0
+            total_count = sum(1 for line in split_f) - 1
+
+        with open(f"{PATH_TO_DATA}/splits/{split}.csv") as split_f:
             csv_reader = csv.reader(split_f, delimiter="|")
+            file_count = 0
             next(csv_reader, None)
             for row in csv_reader:
-                print(processed_count)
                 path_to_wav = row[0]
                 melspec = extract_melspec(path_to_wav)
-                processed_count += 1
-                melspec_name = path_to_wav.split(sep="/")[-1]
-                np.save(f"{OUT_DIR}/{split}/{melspec_name}.npy", melspec)
+
+                filename = path_to_wav.split(sep="/")[-1]
+                filename = filename.split(sep=".")[0]
+                filename = f"{OUT_DIR}/{split}/{filename}.pt"
+                torch.save(melspec, filename)
+
+                file_count += 1
+                print(f"\t[{file_count}/{total_count}]: {filename}")
 
 if __name__ == "__main__":
     main()

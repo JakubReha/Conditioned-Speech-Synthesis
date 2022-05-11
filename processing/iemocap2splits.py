@@ -10,28 +10,35 @@ VAL_SPLIT = 0.15
 TRAIN_SPLIT = 1 - (TEST_SPLIT+VAL_SPLIT)
 
 def main():
-    items = []
-    n_items = 0
     random.seed(1)
 
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
+	
+    total_count = 0
+    with open(f"{PATH_TO_DATA}/iemocap/metadata.csv") as metadata_f:
+        total_count = sum(1 for line in metadata_f) - 1
 
     with open(f"{PATH_TO_DATA}/iemocap/metadata.csv") as metadata_f:
+        print("#####################################################################")
+        print(f"- Splitting IEMOCAP data into train/val/test splits into {OUT_DIR} -")
+        print("#####################################################################")
         csv_reader = csv.reader(metadata_f, delimiter=",")
         next(csv_reader, None)
+        file_count = 0
+        items = []
         for row in csv_reader:
-            print(n_items)
             path_to_wav = get_path(row[0])
             emotion, valence, arousal, dominance, text = row[3], row[4], row[5], row[6], row[7]
             items += [[path_to_wav, emotion, valence, arousal, dominance, text]]
-            n_items += 1
+            file_count += 1
+            print(f"\t[{file_count}/{total_count}]: {path_to_wav}")
 			
     random.shuffle(items)
     
-    train_items = items[0:int(np.round(n_items*TRAIN_SPLIT))]
-    test_items = items[int(np.round(n_items*TRAIN_SPLIT)):int(np.round(n_items*TRAIN_SPLIT)+np.round(n_items*VAL_SPLIT))]
-    val_items = items[int(np.round(n_items*TRAIN_SPLIT)+np.round(n_items*VAL_SPLIT)):]
+    train_items = items[0:int(np.round(file_count*TRAIN_SPLIT))]
+    test_items = items[int(np.round(file_count*TRAIN_SPLIT)):int(np.round(file_count*TRAIN_SPLIT)+np.round(file_count*VAL_SPLIT))]
+    val_items = items[int(np.round(file_count*TRAIN_SPLIT)+np.round(file_count*VAL_SPLIT)):]
 
     writeToFile("train.csv", train_items)
     writeToFile("val.csv", val_items)
