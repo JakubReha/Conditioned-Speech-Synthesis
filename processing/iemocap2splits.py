@@ -12,6 +12,9 @@ TRAIN_SPLIT = 1 - (TEST_SPLIT+VAL_SPLIT)
 def main():
     random.seed(1)
 
+    if not os.path.exists(PATH_TO_DATA):
+        os.mkdir(PATH_TO_DATA)
+
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
 	

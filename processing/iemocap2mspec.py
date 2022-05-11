@@ -36,6 +36,9 @@ def extract_melspec(path_to_wav):
     return melspec
 
 def main():
+    if not os.path.exists(PATH_TO_DATA):
+        os.mkdir(PATH_TO_DATA)
+
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
 
