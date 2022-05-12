@@ -1,7 +1,7 @@
 # data
-data/iemocap
-data/splits
-data/melspec
+**/*.pt
+**/*.npy
+data/*
 
 # vscode
 .vscode
