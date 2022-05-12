@@ -4,7 +4,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-PATH_TO_DATA = "../data"
+PATH_TO_DATA = "data"
 OUT_DIR = f"{PATH_TO_DATA}/splits"
 TEST_SPLIT = 0
 VAL_SPLIT = 0.1
