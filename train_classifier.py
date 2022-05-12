@@ -3,6 +3,9 @@ from config import parse_configs
 from classifier import EmbedNet
 from tensorboardX import SummaryWriter
 from tqdm import tqdm
+import torch.utils.data as tud
+from dataset import IEMOCAPDataset
+import numpy as np
 
 def load(model, optimizer, path):
     checkpoint = torch.load(path)
@@ -15,20 +18,19 @@ def train(configs):
     print("CUDA", torch.cuda.is_available())
     if device.type == "cpu":
         configs.batch_size = 1
-    # TODO: add dataloaders
-    train_loader = []
-    val_loader = []
 
-    # TODO: change path
-    weights = torch.load("../iemocap/weights.pt")
-    model = EmbedNet().to(device)
+    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
+    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv")
+    train_loader = tud.DataLoader(train_data, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=True)
+    val_loader = tud.DataLoader(val_data, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
+
+    weights = torch.from_numpy(np.load("data/weights.npy"))
+    model = EmbedNet().to(device).to(torch.double)
     loss = torch.nn.CrossEntropyLoss(weight=weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=configs.lr, weight_decay=.001)
 
     if configs.checkpoint:
         load(model, optimizer, configs.checkpoint)
-    model.to(torch.double)
-
 
     train_log_dir = 'logs/tensorboard/' + configs.name
     train_summary_writer = SummaryWriter(train_log_dir)
