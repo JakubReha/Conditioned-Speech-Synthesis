@@ -86,7 +86,7 @@ def main():
     writeToFile("test.csv", test_items)
     weights = 1/np.array(list(weights.values()))
     weights = weights/weights.sum()
-    np.save("../data/weights.npy", weights)
+    np.save("data/weights.npy", weights)
 
 def get_path(filename):
     sessions = {
