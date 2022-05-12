@@ -57,7 +57,7 @@ class EmbedNet(nn.Module):
         self.fc0 = nn.Linear(128, 128)
         self.fc1 = nn.Linear(128, 256)
         self.fc2 = nn.Linear(256, 256)
-        self.fc3 = nn.Linear(256, 9)
+        self.fc3 = nn.Linear(256, 7)
 
     def forward(self, x):
         batch = x.shape[0]

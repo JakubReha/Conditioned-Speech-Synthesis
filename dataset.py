@@ -18,24 +18,20 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
         with open(path_to_csv) as f:
             csv_reader = csv.reader(f, delimiter="|")
             next(csv_reader, None)
-            count=0
+            count = 0
             for row in csv_reader:
                 melspec_file = row[0].split(sep="/")[-1]
                 melspec_file = f"{melspec_file.split('.')[0]}.pt"
                 melspec_file = f"{self.path_to_melspec}/{melspec_file}"
-                melspec = torch.load(melspec_file)
-
                 emotion = row[1]
-
-                self.data["melspec"] += [melspec]
-                self.data["labels"] += [emotion]
+                self.melspec_paths += [melspec_file]
+                self.emotions += [emotion]
                 count += 1
                 if count > 4:
                     break
 
-
     def __getitem__(self, index):
-        return self.data["melspec"][index], self.data["labels"][index]
+        return torch.load(self.melspec_paths)[index], self.emotions[index]
     
     def __len__(self):
         return len(self.data["melspec"])
