@@ -3,17 +3,16 @@ import csv
 from torchvision import datasets  # type: ignore
 import torchvision.transforms as T  # type: ignore
 import torch.utils.data as tud
-import numpy as np
 import matplotlib.pyplot as plt  # type: ignore
 from torchvision.utils import make_grid  # type: ignore
 import librosa.display
 
 class IEMOCAPDataset(torch.utils.data.Dataset):
     def __init__(self, path_to_csv: str, ):
-        self.data = {"melspec": [], "labels":[]}
-
         self.path_to_melspec = path_to_csv.split(sep=".")[:-1][0]
         self.path_to_melspec = self.path_to_melspec.replace('splits', 'melspec')
+        self.melspec_paths = []
+        self.emotions = []
 
         with open(path_to_csv) as f:
             csv_reader = csv.reader(f, delimiter="|")
@@ -27,18 +26,16 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
                 self.melspec_paths += [melspec_file]
                 self.emotions += [emotion]
                 count += 1
-                if count > 4:
-                    break
 
     def __getitem__(self, index):
-        return torch.load(self.melspec_paths)[index], self.emotions[index]
+        return torch.load(self.melspec_paths[index]), self.emotions[index]
     
     def __len__(self):
-        return len(self.data["melspec"])
+        return len(self.melspec_paths)
 
     def show_batch(self, dataloader):
         for melspec, labels in dataloader:
-            fig, ax = plt.subplots(figsize=(10,10))
+            fig, ax = plt.subplots(figsize=(10, 10))
             librosa.display.specshow(melspec)
             plt.colorbar()
             plt.show()

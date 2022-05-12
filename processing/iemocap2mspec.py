@@ -9,7 +9,7 @@ sys.path.append('tacotron2/')
 from tacotron2.layers import TacotronSTFT
 from tacotron2.utils import load_wav_to_torch
 
-PATH_TO_DATA="data"
+PATH_TO_DATA="../data"
 OUT_DIR = f"{PATH_TO_DATA}/melspec"
 
 MAX_WAV_VALUE=32768.0

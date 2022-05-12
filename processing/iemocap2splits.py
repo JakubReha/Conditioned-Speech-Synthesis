@@ -84,7 +84,7 @@ def main():
     writeToFile("train.csv", train_items)
     writeToFile("val.csv", val_items)
     writeToFile("test.csv", test_items)
-    np.save("weights.npy", weights)
+    np.save("weights.npy", np.array(weights.values()))
 
 def get_path(filename):
     sessions = {
