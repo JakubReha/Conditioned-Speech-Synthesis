@@ -27,10 +27,6 @@ def main():
         os.mkdir(PATH_TO_DATA)
 
     for split in ["train", "test", "val"]:
-        print("##############################################################")
-        print(f"- Extracting Mel Spectogram features into {PATH_TO_DATA} -")
-        print("##############################################################")
-
         total_count = 0
         with open(f"{PATH_TO_DATA}/splits/{split}.csv") as split_f:
             total_count = sum(1 for line in split_f) - 1
