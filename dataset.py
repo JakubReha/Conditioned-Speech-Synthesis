@@ -19,6 +19,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
         self.path_to_melspec = self.path_to_melspec.replace('splits', 'melspec')
         self.melspec_paths = []
         self.emotions = []
+        self.speakers = []
         self.transciptions = []
 
         with open(path_to_csv) as f:
@@ -30,14 +31,16 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
                 melspec_file = f"{melspec_file.split('.')[0]}.pt"
                 melspec_file = f"{self.path_to_melspec}/{melspec_file}"
                 emotion = row[1]
+                speaker = row[-1]
                 transcription = row[5]
                 self.melspec_paths += [melspec_file]
                 self.emotions += [emotion]
+                self.speakers += [speaker]
                 self.transciptions += [torch.IntTensor(text_to_sequence(text=transcription, cleaner_names=['english_cleaners']))]
                 count += 1
 
     def __getitem__(self, index):
-        return torch.load(self.melspec_paths[index]), int(self.emotions[index]), self.transciptions[index]
+        return torch.load(self.melspec_paths[index]), int(self.emotions[index]), self.transciptions[index], int(self.speakers[index])
     
     def __len__(self):
         return len(self.melspec_paths)
@@ -50,19 +53,21 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
 
         padded_melspec = torch.zeros((len(batch_data), batch_data[0][0].shape[0], max_melspec_len))
         emotions = torch.zeros((len(batch_data)), dtype=torch.int)
+        speakers = torch.zeros((len(batch_data)), dtype=torch.int)
         padded_transcription = torch.zeros((len(batch_data), max_transcription_len), dtype=torch.int)
-        for index, (melspec, emotion, transcription) in enumerate(batch_data):
+        for index, (melspec, emotion, transcription, speaker) in enumerate(batch_data):
             melspec = F.pad(input=melspec, pad=(0, max_melspec_len - melspec.shape[1]), mode="constant", value=0.0)
             transcription = F.pad(input=transcription, pad=(0, max_transcription_len - len(transcription)), mode="constant", value=0)
             padded_melspec[index] = melspec
             padded_transcription[index] = transcription
             emotions[index] = emotion
+            speakers[index] = speaker
 
-        return padded_melspec, emotions, padded_transcription, melspec_lens, transcription_lens
+        return padded_melspec, emotions, padded_transcription, speakers, melspec_lens, transcription_lens
 
 
 def show_batch(dataloader):
-    for melspecs, emotions, transcriptions, melspec_lens, transcription_lens in dataloader:
+    for melspecs, emotions, transcriptions, speakers, melspec_lens, transcription_lens in dataloader:
         fig, axes = plt.subplots(nrows=len(emotions), figsize=(15, 10))
         for i in range(len(axes)):
             melspec = melspecs[i][:, :]
