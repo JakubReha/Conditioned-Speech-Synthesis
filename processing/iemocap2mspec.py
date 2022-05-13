@@ -3,17 +3,19 @@ import sys
 import torch
 import os
 import sys
+import librosa
 
 sys.path.append('.')
 sys.path.append('tacotron2/')
 from tacotron2.layers import TacotronSTFT
 from tacotron2.utils import load_wav_to_torch
+import soundfile
 
 PATH_TO_DATA="data"
 OUT_DIR = f"{PATH_TO_DATA}/melspec"
 
 MAX_WAV_VALUE=32768.0
-SAMPLING_RATE=16000
+SAMPLING_RATE=22050
 FILTER_LENGTH=1024
 HOP_LENGTH=256
 WIN_LENGTH=1024
@@ -21,11 +23,13 @@ N_MEL_CHANNELS=80
 MEL_FMIN=0.0
 MEL_FMAX=8000.0
 
-# TODO: Adjust parameters for melspec extraction
 
 def extract_melspec(path_to_wav):
     stft = TacotronSTFT(FILTER_LENGTH, HOP_LENGTH, WIN_LENGTH, N_MEL_CHANNELS, SAMPLING_RATE, MEL_FMIN, MEL_FMAX)
     audio, sampling_rate = load_wav_to_torch(path_to_wav)
+    soundfile.write(path_to_wav, audio, sampling_rate, subtype='PCM_16')
+    audio, sampling_rate = load_wav_to_torch(path_to_wav)
+    audio = torch.from_numpy(librosa.resample(audio.numpy(), orig_sr=sampling_rate, target_sr=SAMPLING_RATE))
     if sampling_rate != stft.sampling_rate:
         raise ValueError(f"{sampling_rate} != {stft.sampling_rate} SR doesn't match target SR")
     audio_norm = audio / MAX_WAV_VALUE
