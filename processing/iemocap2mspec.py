@@ -13,7 +13,7 @@ import soundfile
 import numpy as np
 
 PATH_TO_DATA="data"
-OUT_DIR = f"{PATH_TO_DATA}/melspec"
+OUT_DIR = f"{PATH_TO_DATA}/melspec_no_silence"
 
 MAX_WAV_VALUE=32768.0
 SAMPLING_RATE=22050
@@ -62,7 +62,7 @@ def main():
             file_count = 0
             next(csv_reader, None)
             for row in csv_reader:
-                path_to_wav = row[0]
+                path_to_wav = row[0].split(".")[0] + "_no_silence.wav"
                 melspec = extract_melspec(path_to_wav)
 
                 filename = path_to_wav.split(sep="/")[-1]
