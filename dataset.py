@@ -16,7 +16,7 @@ from tacotron2.text import sequence_to_text
 class IEMOCAPDataset(torch.utils.data.Dataset):
     def __init__(self, path_to_csv: str, ):
         self.path_to_melspec = path_to_csv.split(sep=".")[:-1][0]
-        self.path_to_melspec = self.path_to_melspec.replace('splits', 'melspec')
+        self.path_to_melspec = self.path_to_melspec.replace('splits', 'melspec_no_silence')
         self.melspec_paths = []
         self.emotions = []
         self.speakers = []
@@ -28,7 +28,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
             count = 0
             for row in csv_reader:
                 melspec_file = row[0].split(sep="/")[-1]
-                melspec_file = f"{melspec_file.split('.')[0]}.pt"
+                melspec_file = f"{melspec_file.split('.')[0]}_no_silence.pt"
                 melspec_file = f"{self.path_to_melspec}/{melspec_file}"
                 emotion = row[1]
                 speaker = row[-1]

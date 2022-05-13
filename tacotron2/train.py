@@ -3,7 +3,9 @@ import time
 import argparse
 import math
 from numpy import finfo
-
+import sys
+from dataset import IEMOCAPDataset
+sys.path.append('tacotron2/')
 import torch
 from distributed import apply_gradient_allreduce
 import torch.distributed as dist
@@ -41,8 +43,8 @@ def init_distributed(hparams, n_gpus, rank, group_name):
 
 def prepare_dataloaders(hparams):
     # Get data, data loaders and collate function ready
-    trainset = TextMelLoader(hparams.training_files, hparams)
-    valset = TextMelLoader(hparams.validation_files, hparams)
+    trainset = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
+    valset = IEMOCAPDataset(path_to_csv="data/splits/val.csv")
     collate_fn = TextMelCollate(hparams.n_frames_per_step)
 
     if hparams.distributed_run:
@@ -130,7 +132,7 @@ def validate(model, criterion, valset, iteration, batch_size, n_gpus,
 
         val_loss = 0.0
         for i, batch in enumerate(val_loader):
-            x, y = model.parse_batch(batch)
+            x, y, (emotions, speakers) = model.parse_batch(batch)
             y_pred = model(x)
             loss = criterion(y_pred, y)
             if distributed_run:
@@ -211,7 +213,7 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                 param_group['lr'] = learning_rate
 
             model.zero_grad()
-            x, y = model.parse_batch(batch)
+            x, y, (emotions, speakers) = model.parse_batch(batch)
             y_pred = model(x)
 
             loss = criterion(y_pred, y)
@@ -258,9 +260,9 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output_directory', type=str,
-                        help='directory to save checkpoints')
+                        help='directory to save checkpoints', default="tacotron_output")
     parser.add_argument('-l', '--log_directory', type=str,
-                        help='directory to save tensorboard logs')
+                        help='directory to save tensorboard logs', default="tacotron_logs")
     parser.add_argument('-c', '--checkpoint_path', type=str, default=None,
                         required=False, help='checkpoint path')
     parser.add_argument('--warm_start', action='store_true',
