@@ -1,10 +1,12 @@
 import torch
 from config import parse_configs
-from classifier import EmbedNet
+from emotion_embedding_network import EmotionEmbeddingNetwork
 from tensorboardX import SummaryWriter
 from tqdm import tqdm
 import torch.utils.data as tud
 from dataset import IEMOCAPDataset
+from dataset import EmotionEmbeddingNetworkCollate
+from dataset import TacotronCollate
 import numpy as np
 
 def load(model, optimizer, path):
@@ -19,13 +21,15 @@ def train(configs):
     if device.type == "cpu":
         configs.batch_size = 1
 
-    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
-    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv")
-    train_loader = tud.DataLoader(train_data, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=True)
-    val_loader = tud.DataLoader(val_data, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
+    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=True)
+    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=True)
+
+    collate_fn = EmotionEmbeddingNetworkCollate()
+    train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
+    val_loader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
 
     weights = torch.from_numpy(np.load("data/weights.npy"))
-    model = EmbedNet().to(device).to(torch.double)
+    model = EmotionEmbeddingNetwork().to(device).to(torch.double)
     loss = torch.nn.CrossEntropyLoss(weight=weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=configs.lr, weight_decay=.001)
 
@@ -39,9 +43,9 @@ def train(configs):
 
     running_loss = 0.0
     for e in tqdm(range(epochs)):
-        for X, y in tqdm(train_loader, leave=False):
+        for melspecs, emotions, speaker_ids in tqdm(train_loader, leave=False):
             model.train()
-            y_pred = model(X)
+            y_pred = model(melspecs)
             J = loss(y_pred, y)
             optimizer.zero_grad()
             J.backward()

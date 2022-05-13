@@ -63,6 +63,7 @@ def main():
             next(csv_reader, None)
             for row in csv_reader:
                 path_to_wav = row[0].split(".")[0] + "_no_silence.wav"
+                # path_to_wav = row[0]
                 melspec = extract_melspec(path_to_wav)
 
                 filename = path_to_wav.split(sep="/")[-1]
