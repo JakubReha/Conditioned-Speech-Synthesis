@@ -43,8 +43,8 @@ def init_distributed(hparams, n_gpus, rank, group_name):
 
 def prepare_dataloaders(hparams):
     # Get data, data loaders and collate function ready
-    trainset = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
-    valset = IEMOCAPDataset(path_to_csv="data/splits/val.csv")
+    trainset = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=True, padded=False)
+    valset = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=True, padded=False)
     collate_fn = TextMelCollate(hparams.n_frames_per_step)
 
     if hparams.distributed_run:
