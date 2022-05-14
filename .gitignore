@@ -1,11 +1,11 @@
 # data
 **/*.pt
+**/*.txt
 **/*.npy
 data/*
 logs/
 waveglow/
 tacotron_output/
-
 # vscode
 .vscode
 
@@ -139,3 +139,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
