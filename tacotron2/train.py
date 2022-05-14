@@ -132,7 +132,7 @@ def validate(model, criterion, valset, iteration, batch_size, n_gpus,
 
         val_loss = 0.0
         for i, batch in enumerate(val_loader):
-            x, y, (emotions, speakers) = model.parse_batch(batch)
+            x, y = model.parse_batch(batch)
             y_pred = model(x)
             loss = criterion(y_pred, y)
             if distributed_run:
@@ -213,7 +213,7 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                 param_group['lr'] = learning_rate
 
             model.zero_grad()
-            x, y, (emotions, speakers) = model.parse_batch(batch)
+            x, y = model.parse_batch(batch)
             y_pred = model(x)
 
             loss = criterion(y_pred, y)
@@ -263,9 +263,9 @@ if __name__ == '__main__':
                         help='directory to save checkpoints', default="tacotron_output")
     parser.add_argument('-l', '--log_directory', type=str,
                         help='directory to save tensorboard logs', default="tacotron_logs")
-    parser.add_argument('-c', '--checkpoint_path', type=str, default=None,
+    parser.add_argument('-c', '--checkpoint_path', type=str, default="tacotron2/tacotron2_statedict.pt",
                         required=False, help='checkpoint path')
-    parser.add_argument('--warm_start', action='store_true',
+    parser.add_argument('--warm_start', action='store_false',
                         help='load model weights only, ignore specified layers')
     parser.add_argument('--n_gpus', type=int, default=1,
                         required=False, help='number of gpus')

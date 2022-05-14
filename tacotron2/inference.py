@@ -1,6 +1,7 @@
 import matplotlib.pylab as plt
 import sys
-sys.path.append('waveglow/')
+sys.path.append('tacotron2/waveglow/')
+sys.path.append('tacotron2/')
 import numpy as np
 import torch
 
@@ -10,7 +11,6 @@ from text import text_to_sequence
 from denoiser import Denoiser
 import librosa
 import soundfile as sf
-from convert_model import update_model
 
 def plot_data(data, figsize=(16, 4)):
     fig, axes = plt.subplots(1, len(data), figsize=figsize)
@@ -23,12 +23,13 @@ def plot_data(data, figsize=(16, 4)):
 hparams = create_hparams()
 hparams.sampling_rate = 22050
 
-checkpoint_path = "tacotron2_statedict.pt"
+#checkpoint_path = "tacotron2/tacotron2_statedict.pt"
+checkpoint_path = "tacotron_output/checkpoint_4000"
 model = load_model(hparams)
 model.load_state_dict(torch.load(checkpoint_path)['state_dict'])
 _ = model.cuda().eval().half()
 
-waveglow_path = 'waveglow_256channels_new.pt'
+waveglow_path = 'tacotron2/waveglow_256channels_new.pt'
 waveglow = torch.load(waveglow_path)['model']
 waveglow = waveglow.remove_weightnorm(waveglow)
 
@@ -50,8 +51,8 @@ plot_data((mel_outputs.float().data.cpu().numpy()[0],
 
 with torch.no_grad():
     audio = waveglow.infer(mel_outputs_postnet, sigma=0.666)
-sf.write("demo.wav", audio[0].data.cpu().numpy().astype(np.float32), hparams.sampling_rate)
+sf.write("demo_mixed.wav", audio[0].data.cpu().numpy().astype(np.float32), hparams.sampling_rate)
 
 audio_denoised = denoiser(audio, strength=0.01)[:, 0]
-sf.write("demo_denoised.wav", audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
+sf.write("demo_denoised_mixed.wav", audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
 

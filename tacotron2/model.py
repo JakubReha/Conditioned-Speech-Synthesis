@@ -463,6 +463,8 @@ class Tacotron2(nn.Module):
         self.n_frames_per_step = hparams.n_frames_per_step
         self.embedding = nn.Embedding(
             hparams.n_symbols, hparams.symbols_embedding_dim)
+        self.speakers_embedding = nn.Embedding(10, hparams.encoder_embedding_dim)
+        torch.nn.init.xavier_uniform_(self.speakers_embedding.weight)
         std = sqrt(2.0 / (hparams.n_symbols + hparams.symbols_embedding_dim))
         val = sqrt(3.0) * std  # uniform bounds for std
         self.embedding.weight.data.uniform_(-val, val)
@@ -483,9 +485,8 @@ class Tacotron2(nn.Module):
         speakers = to_gpu(speakers)
 
         return (
-            (text_padded, input_lengths, mel_padded, max_len, output_lengths),
-            (mel_padded, gate_padded),
-            (emotions, speakers)
+            (text_padded, input_lengths, mel_padded, max_len, output_lengths, emotions, speakers),
+            (mel_padded, gate_padded)
         )
 
     def parse_output(self, outputs, output_lengths=None):
@@ -501,13 +502,13 @@ class Tacotron2(nn.Module):
         return outputs
 
     def forward(self, inputs):
-        text_inputs, text_lengths, mels, max_len, output_lengths = inputs
+        text_inputs, text_lengths, mels, max_len, output_lengths, emotions, speakers = inputs
         text_lengths, output_lengths = text_lengths.data, output_lengths.data
 
         embedded_inputs = self.embedding(text_inputs).transpose(1, 2)
-
+        embedded_speakers = self.speakers_embedding(speakers)
         encoder_outputs = self.encoder(embedded_inputs, text_lengths)
-
+        encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder(
             encoder_outputs, mels, memory_lengths=text_lengths)
 
