@@ -5,6 +5,7 @@ import math
 from numpy import finfo
 import sys
 from dataset import IEMOCAPDataset
+print(os.getcwd())
 sys.path.append('tacotron2/')
 import torch
 from distributed import apply_gradient_allreduce

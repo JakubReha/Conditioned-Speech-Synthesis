@@ -3,6 +3,8 @@
 **/*.npy
 data/*
 logs/
+waveglow/
+tacotron_output/
 
 # vscode
 .vscode
