@@ -11,6 +11,20 @@ from text import text_to_sequence
 from denoiser import Denoiser
 import librosa
 import soundfile as sf
+from sklearn.decomposition import PCA
+
+SPEAKER_DICT = {
+    'Ses01F': 0,
+    'Ses01M': 1,
+    'Ses02F': 2,
+    'Ses02M': 3,
+    'Ses03F': 4,
+    'Ses03M': 5,
+    'Ses04F': 6,
+    'Ses04M': 7,
+    'Ses05F': 8,
+    'Ses05M': 9,
+}
 
 def plot_data(data, k, figsize=(16, 4)):
     fig, axes = plt.subplots(1, len(data), figsize=figsize)
@@ -24,7 +38,7 @@ hparams = create_hparams()
 hparams.sampling_rate = 22050
 
 #checkpoint_path = "tacotron2/tacotron2_statedict.pt"
-checkpoint_path = "tacotron_output/checkpoint_15000"
+checkpoint_path = "tacotron_output_silence/checkpoint_15000"
 model = load_model(hparams)
 model.load_state_dict(torch.load(checkpoint_path)['state_dict'])
 _ = model.cuda().eval().half()
@@ -46,7 +60,7 @@ sequence = torch.autograd.Variable(
 embeddings = []
 for i in range(10):
     (mel_outputs, mel_outputs_postnet, _, alignments), embedded_speaker = model.inference(sequence, torch.LongTensor([[i]]).cuda())
-    embeddings.append(embedded_speaker)
+    embeddings.append(embedded_speaker.detach().cpu().numpy().squeeze())
     plot_data((mel_outputs.float().data.cpu().numpy()[0],
                mel_outputs_postnet.float().data.cpu().numpy()[0],
                alignments.float().data.cpu().numpy()[0].T), i)
@@ -57,4 +71,11 @@ for i in range(10):
 
     audio_denoised = denoiser(audio, strength=0.01)[:, 0]
     sf.write("inference/demo_denoised_speaker_"+str(i)+".wav", audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
-
+pca = PCA(n_components=2)
+y = pca.fit_transform(embeddings)
+fig, ax = plt.subplots()
+ax.scatter([i for i in y[:, 0]], [i for i in y[:, 1]])
+for i in range(10):
+    ax.annotate(list(SPEAKER_DICT.keys())[i], y[i])
+plt.savefig("pca.png")
+plt.show()
