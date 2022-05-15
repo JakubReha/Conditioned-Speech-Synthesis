@@ -18,7 +18,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
         folder_name = "melspec"
         if padded:
             folder_name = f"padded_{folder_name}"
-        if silence:
+        if not silence:
             folder_name = f"{folder_name}_no_silence"
         self.silence = silence
         self.path_to_melspec = path_to_csv.split(sep=".")[:-1][0]
@@ -34,7 +34,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
             count = 0
             for row in csv_reader:
                 melspec_file = row[0].split(sep="/")[-1]
-                if self.silence:
+                if not self.silence:
                     melspec_file = f"{melspec_file.split('.')[0]}_no_silence.pt"
                 else:
                     melspec_file = f"{melspec_file.split('.')[0]}.pt"
