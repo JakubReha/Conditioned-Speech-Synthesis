@@ -46,7 +46,7 @@ def main():
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
 
-    for split in ["train", "test", "val"]:
+    for split in ["val", "train", "test"]:
         print("##############################################################")
         print(f"- Extracting Mel Spectogram features into {OUT_DIR}/{split} -")
         print("##############################################################")

@@ -519,9 +519,11 @@ class Tacotron2(nn.Module):
             [mel_outputs, mel_outputs_postnet, gate_outputs, alignments],
             output_lengths)
 
-    def inference(self, inputs):
+    def inference(self, inputs, speaker_id):
         embedded_inputs = self.embedding(inputs).transpose(1, 2)
         encoder_outputs = self.encoder.inference(embedded_inputs)
+        embedded_speakers = self.speakers_embedding(speaker_id)
+        encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder.inference(
             encoder_outputs)
 
@@ -531,4 +533,4 @@ class Tacotron2(nn.Module):
         outputs = self.parse_output(
             [mel_outputs, mel_outputs_postnet, gate_outputs, alignments])
 
-        return outputs
+        return outputs, embedded_speakers
