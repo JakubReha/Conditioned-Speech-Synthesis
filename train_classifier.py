@@ -47,7 +47,7 @@ def train(configs):
             melspecs = melspecs.to(device).to(torch.double)
             emotions = emotions.to(device).to(torch.int64)
             model.train()
-            y_pred = model(melspecs)[0]
+            y_pred, emotion_embedding = model(melspecs)
             J = loss(y_pred, emotions)
             optimizer.zero_grad()
             J.backward()
