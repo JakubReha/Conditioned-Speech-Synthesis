@@ -5,7 +5,9 @@
 data/*
 logs/
 waveglow/
-tacotron_output/
+tacotron_output_silence/
+tacotron_output_no_silence/
+saved_models/
 # vscode
 .vscode
 
