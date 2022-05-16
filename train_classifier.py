@@ -28,7 +28,7 @@ def train(configs):
     train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
     val_loader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
 
-    weights = torch.from_numpy(np.load("data/weights.npy"))
+    weights = torch.from_numpy(np.load("data/weights.npy")).to(device)
     model = EmotionEmbeddingNetwork().to(device).to(torch.double)
     loss = torch.nn.CrossEntropyLoss(weight=weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=configs.lr, weight_decay=.001)
@@ -43,10 +43,12 @@ def train(configs):
 
     running_loss = 0.0
     for e in tqdm(range(epochs)):
-        for melspecs, emotions, speaker_ids in tqdm(train_loader, leave=False):
+        for melspecs, emotions, _ in tqdm(train_loader, leave=False):
+            melspecs = melspecs.to(device).to(torch.double)
+            emotions = emotions.to(device).to(torch.int64)
             model.train()
-            y_pred = model(melspecs)
-            J = loss(y_pred, y)
+            y_pred = model(melspecs)[0]
+            J = loss(y_pred, emotions)
             optimizer.zero_grad()
             J.backward()
             optimizer.step()
@@ -59,9 +61,11 @@ def train(configs):
                 val_loss = 0.0
                 model.eval()
                 with torch.no_grad():
-                    for X, y in tqdm(val_loader, leave=False):
-                        y_pred = model(X)
-                        J = loss(y_pred, y)
+                    for melspecs, emotions, _ in tqdm(val_loader, leave=False):
+                        melspecs = melspecs.to(device).to(torch.double)
+                        emotions = emotions.to(device).to(torch.int64)
+                        y_pred = model(melspecs)[0]
+                        J = loss(y_pred, emotions)
                         val_loss += J.item()
                 train_summary_writer.add_scalar(f'info/Validation loss', val_loss, update_step)
             update_step += 1
