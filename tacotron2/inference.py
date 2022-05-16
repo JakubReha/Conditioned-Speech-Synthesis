@@ -12,6 +12,7 @@ from denoiser import Denoiser
 import librosa
 import soundfile as sf
 from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 
 SPEAKER_DICT = {
     'Ses01F': 0,
@@ -38,7 +39,7 @@ hparams = create_hparams()
 hparams.sampling_rate = 22050
 
 #checkpoint_path = "tacotron2/tacotron2_statedict.pt"
-checkpoint_path = "tacotron_output_silence/checkpoint_15000"
+checkpoint_path = "tacotron_output_no_silence/checkpoint_12000"
 model = load_model(hparams)
 model.load_state_dict(torch.load(checkpoint_path)['state_dict'])
 _ = model.cuda().eval().half()
@@ -53,7 +54,7 @@ for k in waveglow.convinv:
 denoiser = Denoiser(waveglow)
 
 
-text = "Fuck yeah. It finally works."
+text = "I speak your language."
 sequence = np.array(text_to_sequence(text, ['english_cleaners']))[None, :]
 sequence = torch.autograd.Variable(
     torch.from_numpy(sequence)).cuda().long()
@@ -71,11 +72,19 @@ for i in range(10):
 
     audio_denoised = denoiser(audio, strength=0.01)[:, 0]
     sf.write("inference/demo_denoised_speaker_"+str(i)+".wav", audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
-pca = PCA(n_components=2)
+pca = TSNE(n_components=2)
+pca2 = PCA(n_components=2)
 y = pca.fit_transform(embeddings)
+y2 = pca2.fit_transform(embeddings)
 fig, ax = plt.subplots()
 ax.scatter([i for i in y[:, 0]], [i for i in y[:, 1]])
 for i in range(10):
     ax.annotate(list(SPEAKER_DICT.keys())[i], y[i])
-plt.savefig("pca.png")
+plt.savefig("inference/tsne_no_silence.png")
+plt.show()
+fig, ax = plt.subplots()
+ax.scatter([i for i in y2[:, 0]], [i for i in y2[:, 1]])
+for i in range(10):
+    ax.annotate(list(SPEAKER_DICT.keys())[i], y2[i])
+plt.savefig("inference/pca_no_silence.png")
 plt.show()
