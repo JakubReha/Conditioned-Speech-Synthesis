@@ -57,8 +57,8 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
 class EmotionEmbeddingNetworkCollate():
     def __call__(self, batch_data):
         melspecs = torch.zeros((len(batch_data), batch_data[0][0].shape[0], batch_data[0][0].shape[1]))
-        emotions = torch.zeros((len(batch_data)), dtype=torch.int)
-        speakers = torch.zeros((len(batch_data)), dtype=torch.int)
+        emotions = torch.zeros((len(batch_data)))
+        speakers = torch.zeros((len(batch_data)))
         for index, (melspec, emotion, transcription, speaker) in enumerate(batch_data):
             melspecs[index] = melspec
             emotions[index] = emotion
