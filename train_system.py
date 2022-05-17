@@ -21,11 +21,11 @@ def train(configs):
     if device.type == "cpu":
         configs.batch_size = 1
 
-    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=True)
-    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=True)
+    emonet_train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=True)
+    emonet_val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=True)
 
-    collate_fn = EmotionEmbeddingNetworkCollate()
-    train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
+    emonet_collate_fn = EmotionEmbeddingNetworkCollate()
+    emonet_train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
     val_loader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
 
     weights = torch.from_numpy(np.load("data/weights.npy")).to(device)
@@ -43,9 +43,9 @@ def train(configs):
 
     running_loss = 0.0
     for e in tqdm(range(epochs)):
-        for melspecs, emotions, _ in tqdm(train_loader, leave=False):
-            melspecs = melspecs.to(device).to(torch.double)
-            emotions = emotions.to(device).to(torch.int64)
+        for padded_melspec, emotions, padded_transcription, speakers, melspec_lens, transcription_lens in tqdm(train_loader, leave=False):
+            melspecs = padded_melspec.to(device).to(torch.double)
+            emotions = padded_melspec.to(device).to(torch.int64)
             model.train()
             y_pred, emotion_embedding = model(melspecs)
             J = loss(y_pred, emotions)

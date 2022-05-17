@@ -3,7 +3,6 @@
 **/*.txt
 **/*.npy
 data/*
-logs/
 waveglow/
 tacotron_output_silence/
 tacotron_output_no_silence/
