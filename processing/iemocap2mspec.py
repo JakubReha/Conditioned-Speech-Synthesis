@@ -9,14 +9,14 @@ sys.path.append('.')
 sys.path.append('tacotron2/')
 from tacotron2.layers import TacotronSTFT
 from tacotron2.utils import load_wav_to_torch
-import soundfile
+import soundfile as sf
 import numpy as np
 
 PATH_TO_DATA="data"
 OUT_DIR = f"{PATH_TO_DATA}/melspec_no_silence"
 
 MAX_WAV_VALUE=32768.0
-SAMPLING_RATE=22050
+SAMPLING_RATE=16000
 FILTER_LENGTH=1024
 HOP_LENGTH=256
 WIN_LENGTH=1024
@@ -28,8 +28,8 @@ MEL_FMAX=8000.0
 def extract_melspec(path_to_wav):
     stft = TacotronSTFT(FILTER_LENGTH, HOP_LENGTH, WIN_LENGTH, N_MEL_CHANNELS, SAMPLING_RATE, MEL_FMIN, MEL_FMAX)
     audio, sampling_rate = load_wav_to_torch(path_to_wav)
-    audio = torch.from_numpy(np.clip(librosa.resample(audio.numpy(), orig_sr=sampling_rate, target_sr=SAMPLING_RATE), -MAX_WAV_VALUE, MAX_WAV_VALUE))
-    sampling_rate = SAMPLING_RATE
+    #audio = torch.from_numpy(np.clip(librosa.resample(audio.numpy(), orig_sr=sampling_rate, target_sr=SAMPLING_RATE), -MAX_WAV_VALUE, MAX_WAV_VALUE))
+    #sf.write(path_to_wav.split(".")[0] + '_22kHz.wav', audio, SAMPLING_RATE)
     if sampling_rate != stft.sampling_rate:
         raise ValueError(f"{sampling_rate} != {stft.sampling_rate} SR doesn't match target SR")
     audio_norm = audio / MAX_WAV_VALUE
@@ -68,7 +68,7 @@ def main():
 
                 filename = path_to_wav.split(sep="/")[-1]
                 filename = filename.split(sep=".")[0]
-                filename = f"{OUT_DIR}/{split}/{filename}.pt"
+                filename = f"{OUT_DIR}/{split}/{filename}_16k.pt"
                 torch.save(melspec, filename)
 
                 file_count += 1
