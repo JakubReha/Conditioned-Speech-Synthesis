@@ -21,17 +21,34 @@ def train(configs):
     if device.type == "cpu":
         configs.batch_size = 1
 
-    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=True)
-    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=True)
+    # Set up data and model for Emotion Embedding Network
+    emonet_train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=True)
+    emonet_val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=True)
 
-    collate_fn = EmotionEmbeddingNetworkCollate()
-    train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
-    val_loader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
+    emonet_collate_fn = EmotionEmbeddingNetworkCollate()
+    emonet_batch_size = 64
+    emonet_train_loader = tud.DataLoader(emonet_train_data, collate_fn=emonet_collate_fn, num_workers=2, prefetch_factor=2, batch_size=emonet_batch_size, shuffle=True)
+    emonet_val_loader = tud.DataLoader(emonet_val_data, collate_fn=emonet_collate_fn, num_workers=2, prefetch_factor=2, batch_size=emonet_batch_size, shuffle=True)
 
     weights = torch.from_numpy(np.load("data/weights.npy")).to(device)
-    model = EmotionEmbeddingNetwork().to(device).to(torch.double)
-    loss = torch.nn.CrossEntropyLoss(weight=weights)
-    optimizer = torch.optim.Adam(model.parameters(), lr=configs.lr, weight_decay=.001)
+    emonet_model = EmotionEmbeddingNetwork().to(device).to(torch.double)
+    emonet_loss = torch.nn.CrossEntropyLoss(weight=weights)
+    emonet_optimizer = torch.optim.Adam(emonet_model.parameters(), lr=configs.lr, weight_decay=.001)
+
+    # Set up data and model for Tacotron
+    tacotron_train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=False)
+    tacotron_val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=False)
+
+    tacotron_collate_fn = EmotionEmbeddingNetworkCollate()
+    tacotron_batch_size = 64
+    tacotron_train_loader = tud.DataLoader(tacotron_train_data, collate_fn=tacotron_collate_fn, num_workers=2, prefetch_factor=2, batch_size=tacotron_batch_size, shuffle=True)
+    tacotron_val_loader = tud.DataLoader(tacotron_val_data, collate_fn=tacotron_collate_fn, num_workers=2, prefetch_factor=2, batch_size=tacotron_batch_size, shuffle=True)
+
+    weights = torch.from_numpy(np.load("data/weights.npy")).to(device)
+    tacotron_model = EmotionEmbeddingNetwork().to(device).to(torch.double)
+    tacotron_loss = torch.nn.CrossEntropyLoss(weight=weights)
+    tacotron_optimizer = torch.optim.Adam(tacotron_model.parameters(), lr=configs.lr, weight_decay=.001)
+
 
     if configs.checkpoint:
         load(model, optimizer, configs.checkpoint)
@@ -43,11 +60,11 @@ def train(configs):
 
     running_loss = 0.0
     for e in tqdm(range(epochs)):
-        for melspecs, emotions, _ in tqdm(train_loader, leave=False):
-            melspecs = melspecs.to(device).to(torch.double)
-            emotions = emotions.to(device).to(torch.int64)
+        for padded_melspec, emotions, padded_transcription, speakers, melspec_lens, transcription_lens in tqdm(train_loader, leave=False):
+            melspecs = padded_melspec.to(device).to(torch.double)
+            emotions = padded_melspec.to(device).to(torch.int64)
             model.train()
-            y_pred = model(melspecs)[0]
+            y_pred, emotion_embedding = model(melspecs)
             J = loss(y_pred, emotions)
             optimizer.zero_grad()
             J.backward()

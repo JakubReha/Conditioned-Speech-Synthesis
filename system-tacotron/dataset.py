@@ -8,8 +8,8 @@ from torchvision.utils import make_grid  # type: ignore
 import librosa.display
 import torch.nn.functional as F
 import sys
+
 sys.path.append('tacotron2/')
-from data_utils import TextMelLoader, TextMelCollate
 from text import text_to_sequence
 from text import sequence_to_text
 
@@ -35,7 +35,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
             for row in csv_reader:
                 melspec_file = row[0].split(sep="/")[-1]
                 if not self.silence:
-                    melspec_file = f"{melspec_file.split('.')[0]}_no_silence_16k.pt"
+                    melspec_file = f"{melspec_file.split('.')[0]}_no_silence.pt"
                 else:
                     melspec_file = f"{melspec_file.split('.')[0]}.pt"
                 melspec_file = f"{self.path_to_melspec}/{melspec_file}"
@@ -57,8 +57,8 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
 class EmotionEmbeddingNetworkCollate():
     def __call__(self, batch_data):
         melspecs = torch.zeros((len(batch_data), batch_data[0][0].shape[0], batch_data[0][0].shape[1]))
-        emotions = torch.zeros((len(batch_data)))
-        speakers = torch.zeros((len(batch_data)))
+        emotions = torch.zeros((len(batch_data)), dtype=torch.int)
+        speakers = torch.zeros((len(batch_data)), dtype=torch.int)
         for index, (melspec, emotion, transcription, speaker) in enumerate(batch_data):
             melspecs[index] = melspec
             emotions[index] = emotion
@@ -88,12 +88,11 @@ class TacotronCollate():
 
 
 def show_batch(dataloader):
-    for text_padded, input_lengths, mel_padded, gate_padded, \
-            output_lengths, emotions, speakers in dataloader:
+    for melspecs, emotions, transcriptions, speakers, melspec_lens, transcription_lens in dataloader:
         fig, axes = plt.subplots(nrows=len(emotions), figsize=(15, 10))
         for i in range(len(axes)):
-            melspec = mel_padded[i][:, :]
-            transcription = text_padded[i][:]
+            melspec = melspecs[i][:, :]
+            transcription = transcriptions[i][:]
             axes[i].set_title(sequence_to_text(transcription.tolist()))
             img = librosa.display.specshow(melspec.numpy(), ax=axes[i])
             fig.colorbar(img, ax=axes[i])
@@ -103,7 +102,6 @@ def show_batch(dataloader):
 
 
 if __name__ == "__main__":
-    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=False)
-    collate_fn = TextMelCollate(1)
-    train_dataloader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=4, prefetch_factor=2, batch_size=4, shuffle=False)
+    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
+    train_dataloader = tud.DataLoader(train_data, collate_fn=train_data.collate, num_workers=4, prefetch_factor=2, batch_size=4, shuffle=False)
     show_batch(train_dataloader)
