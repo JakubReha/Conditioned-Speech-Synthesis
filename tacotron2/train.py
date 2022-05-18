@@ -55,7 +55,7 @@ def prepare_dataloaders(hparams):
         train_sampler = None
         shuffle = True
 
-    train_loader = DataLoader(trainset, num_workers=1, shuffle=shuffle,
+    train_loader = DataLoader(trainset, num_workers=2, shuffle=shuffle,
                               sampler=train_sampler,
                               batch_size=hparams.batch_size, pin_memory=False,
                               drop_last=True, collate_fn=collate_fn)
@@ -261,7 +261,7 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output_directory', type=str,
-                        help='directory to save checkpoints', default="tacotron_output")
+                        help='directory to save checkpoints', default="tacotron_output_16kHz")
     parser.add_argument('-l', '--log_directory', type=str,
                         help='directory to save tensorboard logs', default="tacotron_logs")
     parser.add_argument('-c', '--checkpoint_path', type=str, default="tacotron2/tacotron2_statedict.pt",

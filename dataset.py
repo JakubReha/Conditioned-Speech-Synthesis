@@ -35,7 +35,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
             for row in csv_reader:
                 melspec_file = row[0].split(sep="/")[-1]
                 if not self.silence:
-                    melspec_file = f"{melspec_file.split('.')[0]}_no_silence.pt"
+                    melspec_file = f"{melspec_file.split('.')[0]}_no_silence_16k.pt"
                 else:
                     melspec_file = f"{melspec_file.split('.')[0]}.pt"
                 melspec_file = f"{self.path_to_melspec}/{melspec_file}"
@@ -103,7 +103,7 @@ def show_batch(dataloader):
 
 
 if __name__ == "__main__":
-    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=True, padded=False)
+    val_data = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=False)
     collate_fn = TextMelCollate(1)
-    train_dataloader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=4, prefetch_factor=2, batch_size=4, shuffle=False)
+    train_dataloader = tud.DataLoader(val_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4, shuffle=False)
     show_batch(train_dataloader)

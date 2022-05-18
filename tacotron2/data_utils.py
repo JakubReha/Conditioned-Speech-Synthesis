@@ -5,7 +5,7 @@ import torch.utils.data
 import sys
 sys.path.append('tacotron2/')
 import layers
-from tacotron2.utils import load_wav_to_torch, load_filepaths_and_text
+from utils import load_wav_to_torch, load_filepaths_and_text
 from text import text_to_sequence
 
 
