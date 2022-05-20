@@ -77,7 +77,9 @@ if __name__ == "__main__":
 
         audio_denoised = denoiser(audio, strength=0.01)[:, 0]
         sf.write(os.path.join(OUT_DIR, "demo_denoised_speaker_"+str(i)+".wav"), audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
-    pca = TSNE(n_components=2)
+
+
+    pca = TSNE(n_components=2, perplexity=5)
     pca2 = PCA(n_components=2)
     y = pca.fit_transform(embeddings)
     y2 = pca2.fit_transform(embeddings)
