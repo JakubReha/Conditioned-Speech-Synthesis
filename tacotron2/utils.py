@@ -1,6 +1,8 @@
 import numpy as np
 from scipy.io.wavfile import read
+import soundfile as sf
 import torch
+import csv
 
 
 def get_mask_from_lengths(lengths):
@@ -11,13 +13,18 @@ def get_mask_from_lengths(lengths):
 
 
 def load_wav_to_torch(full_path):
-    sampling_rate, data = read(full_path)
+    data, sampling_rate = sf.read(full_path)
+    #sampling_rate, data = read(full_path)
     return torch.FloatTensor(data.astype(np.float32)), sampling_rate
 
 
 def load_filepaths_and_text(filename, split="|"):
-    with open(filename, encoding='utf-8') as f:
-        filepaths_and_text = [line.strip().split(split) for line in f]
+    """with open(filename, encoding='utf-8') as f:
+        filepaths_and_text = [line.strip().split(split) for line in f]"""
+    with open("data/VCTK-Corpus-0.92/splits/train.txt") as split_f:
+        csv_reader = csv.reader(split_f, delimiter="|")
+        next(csv_reader, None)
+        filepaths_and_text = [line for line in csv_reader]
     return filepaths_and_text
 
 

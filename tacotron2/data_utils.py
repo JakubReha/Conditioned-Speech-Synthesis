@@ -7,6 +7,7 @@ sys.path.append('tacotron2/')
 import layers
 from utils import load_wav_to_torch, load_filepaths_and_text
 from text import text_to_sequence
+import torchaudio
 
 
 class TextMelLoader(torch.utils.data.Dataset):
@@ -21,6 +22,7 @@ class TextMelLoader(torch.utils.data.Dataset):
         self.max_wav_value = hparams.max_wav_value
         self.sampling_rate = hparams.sampling_rate
         self.load_mel_from_disk = hparams.load_mel_from_disk
+        self.resmaple = torchaudio.transforms.Resample(48000, self.sampling_rate)
         self.stft = layers.TacotronSTFT(
             hparams.filter_length, hparams.hop_length, hparams.win_length,
             hparams.n_mel_channels, hparams.sampling_rate, hparams.mel_fmin,
@@ -30,17 +32,16 @@ class TextMelLoader(torch.utils.data.Dataset):
 
     def get_mel_text_pair(self, audiopath_and_text):
         # separate filename and text
-        audiopath, text = audiopath_and_text[0], audiopath_and_text[1]
+        audiopath, text, speaker = audiopath_and_text[0], audiopath_and_text[1], int(audiopath_and_text[2])
         text = self.get_text(text)
         mel = self.get_mel(audiopath)
-        return (text, mel)
+        return (text, mel, speaker)
 
     def get_mel(self, filename):
         if not self.load_mel_from_disk:
             audio, sampling_rate = load_wav_to_torch(filename)
             if sampling_rate != self.stft.sampling_rate:
-                raise ValueError("{} {} SR doesn't match target {} SR".format(
-                    sampling_rate, self.stft.sampling_rate))
+                audio = self.resmaple(audio)
             audio_norm = audio / self.max_wav_value
             audio_norm = audio_norm.unsqueeze(0)
             audio_norm = torch.autograd.Variable(audio_norm, requires_grad=False)
@@ -75,23 +76,23 @@ class TextMelCollate():
         """Collate's training batch from normalized text and mel-spectrogram
         PARAMS
         ------
-        batch: [text_normalized, emotion, mel_normalized, speaker]
+        batch: [text_normalized, mel_normalized, speaker]
         """
         # Right zero-pad all one-hot text sequences to max input length
         input_lengths, ids_sorted_decreasing = torch.sort(
-            torch.LongTensor([len(x[2]) for x in batch]),
+            torch.LongTensor([len(x[0]) for x in batch]),
             dim=0, descending=True)
         max_input_len = input_lengths[0]
 
         text_padded = torch.LongTensor(len(batch), max_input_len)
         text_padded.zero_()
         for i in range(len(ids_sorted_decreasing)):
-            text = batch[ids_sorted_decreasing[i]][2]
+            text = batch[ids_sorted_decreasing[i]][0]
             text_padded[i, :text.size(0)] = text
 
         # Right zero-pad mel-spec
-        num_mels = batch[0][0].size(0)
-        max_target_len = max([x[0].size(1) for x in batch])
+        num_mels = batch[0][1].size(0)
+        max_target_len = max([x[1].size(1) for x in batch])
         if max_target_len % self.n_frames_per_step != 0:
             max_target_len += self.n_frames_per_step - max_target_len % self.n_frames_per_step
             assert max_target_len % self.n_frames_per_step == 0
@@ -102,17 +103,14 @@ class TextMelCollate():
         gate_padded = torch.FloatTensor(len(batch), max_target_len)
         gate_padded.zero_()
         output_lengths = torch.LongTensor(len(batch))
-        emotions = torch.LongTensor(len(batch), 1)
-        emotions.zero_()
         speakers = torch.LongTensor(len(batch), 1)
         speakers.zero_()
         for i in range(len(ids_sorted_decreasing)):
-            mel = batch[ids_sorted_decreasing[i]][0]
+            mel = batch[ids_sorted_decreasing[i]][1]
             mel_padded[i, :, :mel.size(1)] = mel
             gate_padded[i, mel.size(1)-1:] = 1
             output_lengths[i] = mel.size(1)
-            speakers[i] = batch[ids_sorted_decreasing[i]][3]
-            emotions[i] = batch[ids_sorted_decreasing[i]][1]
+            speakers[i] = batch[ids_sorted_decreasing[i]][2]
 
         return text_padded, input_lengths, mel_padded, gate_padded, \
-            output_lengths, emotions, speakers
+            output_lengths, speakers

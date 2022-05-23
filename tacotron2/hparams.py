@@ -51,6 +51,7 @@ def create_hparams(hparams_string=None, verbose=False):
         encoder_kernel_size=5,
         encoder_n_convolutions=3,
         encoder_embedding_dim=512,
+        n_speakers=108,
 
         # Decoder parameters
         n_frames_per_step=1,  # currently only 1 is supported

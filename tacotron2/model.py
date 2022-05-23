@@ -463,7 +463,7 @@ class Tacotron2(nn.Module):
         self.n_frames_per_step = hparams.n_frames_per_step
         self.embedding = nn.Embedding(
             hparams.n_symbols, hparams.symbols_embedding_dim)
-        self.speakers_embedding = nn.Embedding(10, hparams.encoder_embedding_dim)
+        self.speakers_embedding = nn.Embedding(hparams.n_speakers, hparams.encoder_embedding_dim)
         torch.nn.init.xavier_uniform_(self.speakers_embedding.weight)
         std = sqrt(2.0 / (hparams.n_symbols + hparams.symbols_embedding_dim))
         val = sqrt(3.0) * std  # uniform bounds for std
@@ -474,18 +474,17 @@ class Tacotron2(nn.Module):
 
     def parse_batch(self, batch):
         text_padded, input_lengths, mel_padded, gate_padded, \
-            output_lengths, emotions, speakers = batch
+            output_lengths, speakers = batch
         text_padded = to_gpu(text_padded).long()
         input_lengths = to_gpu(input_lengths).long()
         max_len = torch.max(input_lengths.data).item()
         mel_padded = to_gpu(mel_padded).float()
         gate_padded = to_gpu(gate_padded).float()
         output_lengths = to_gpu(output_lengths).long()
-        emotions = to_gpu(emotions)
         speakers = to_gpu(speakers)
 
         return (
-            (text_padded, input_lengths, mel_padded, max_len, output_lengths, emotions, speakers),
+            (text_padded, input_lengths, mel_padded, max_len, output_lengths, speakers),
             (mel_padded, gate_padded)
         )
 
@@ -502,7 +501,7 @@ class Tacotron2(nn.Module):
         return outputs
 
     def forward(self, inputs):
-        text_inputs, text_lengths, mels, max_len, output_lengths, emotions, speakers = inputs
+        text_inputs, text_lengths, mels, max_len, output_lengths, speakers = inputs
         text_lengths, output_lengths = text_lengths.data, output_lengths.data
 
         embedded_inputs = self.embedding(text_inputs).transpose(1, 2)
