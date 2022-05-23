@@ -7,7 +7,11 @@ import matplotlib.pyplot as plt  # type: ignore
 from torchvision.utils import make_grid  # type: ignore
 import librosa.display
 import torch.nn.functional as F
+import argparse
 import sys
+sys.path.append('tacotron2/')
+from hparams import create_hparams
+from data_utils import TextMelLoader, TextMelCollate
 
 sys.path.append('tacotron2/')
 from text import text_to_sequence
@@ -49,7 +53,7 @@ class IEMOCAPDataset(torch.utils.data.Dataset):
                 count += 1
 
     def __getitem__(self, index):
-        return torch.load(self.melspec_paths[index]), int(self.emotions[index]), self.transcriptions[index], int(self.speakers[index])
+        return self.transcriptions[index], torch.load(self.melspec_paths[index]), int(self.speakers[index])
     
     def __len__(self):
         return len(self.melspec_paths)
@@ -88,8 +92,8 @@ class TacotronCollate():
 
 
 def show_batch(dataloader):
-    for melspecs, emotions, transcriptions, speakers, melspec_lens, transcription_lens in dataloader:
-        fig, axes = plt.subplots(nrows=len(emotions), figsize=(15, 10))
+    for transcriptions, input_lengths, melspecs, gate_padded, output_lengths, speakers in dataloader:
+        fig, axes = plt.subplots(nrows=len(speakers), figsize=(15, 10))
         for i in range(len(axes)):
             melspec = melspecs[i][:, :]
             transcription = transcriptions[i][:]
@@ -102,6 +106,38 @@ def show_batch(dataloader):
 
 
 if __name__ == "__main__":
-    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv")
-    train_dataloader = tud.DataLoader(train_data, collate_fn=train_data.collate, num_workers=4, prefetch_factor=2, batch_size=4, shuffle=False)
-    show_batch(train_dataloader)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-o', '--output_directory', type=str,
+                        help='directory to save checkpoints', default="tacotron_output_vctk")
+    parser.add_argument('-l', '--log_directory', type=str,
+                        help='directory to save tensorboard logs', default="vctk_tacotron_logs")
+    parser.add_argument('-c', '--checkpoint_path', type=str, default="tacotron2/tacotron2_statedict.pt",
+                        required=False, help='checkpoint path')
+    parser.add_argument('--warm_start', action='store_false',
+                        help='load model weights only, ignore specified layers')
+    parser.add_argument('--n_gpus', type=int, default=1,
+                        required=False, help='number of gpus')
+    parser.add_argument('--rank', type=int, default=0,
+                        required=False, help='rank of current gpu')
+    parser.add_argument('--group_name', type=str, default='group_name',
+                        required=False, help='Distributed group name')
+    parser.add_argument('--hparams', type=str,
+                        required=False, help='comma separated name=value pairs')
+
+    args = parser.parse_args()
+    hparams = create_hparams(args.hparams)
+    train_data = IEMOCAPDataset(path_to_csv="data/splits/train.csv", silence=False, padded=False)
+
+
+    trainset = TextMelLoader("data/VCTK-Corpus-0.92/splits/train.txt", hparams)
+    valset = TextMelLoader("data/VCTK-Corpus-0.92/splits/val.txt", hparams)
+    collate_fn = TextMelCollate(hparams.n_frames_per_step)
+
+    """train_loader = tud.DataLoader(train_data, collate_fn=collate_fn, num_workers=2, prefetch_factor=2, batch_size=4,
+                                  shuffle=False)"""
+    train_loader = tud.DataLoader(trainset, num_workers=2, shuffle=False,
+                              sampler=None,
+                              batch_size=6, pin_memory=False,
+                              drop_last=True, collate_fn=collate_fn)
+
+    show_batch(train_loader)
