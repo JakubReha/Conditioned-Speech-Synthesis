@@ -42,6 +42,7 @@ class TextMelLoader(torch.utils.data.Dataset):
             audio, sampling_rate = load_wav_to_torch(filename)
             if sampling_rate != self.stft.sampling_rate:
                 audio = self.resmaple(audio)
+                audio = torch.clamp(audio, -1, 1)
             audio_norm = audio / self.max_wav_value
             audio_norm = audio_norm.unsqueeze(0)
             audio_norm = torch.autograd.Variable(audio_norm, requires_grad=False)
