@@ -23,8 +23,8 @@ def load_wav_to_torch(full_path):
 def load_filepaths_and_text(filename, split="|"):
     """with open(filename, encoding='utf-8') as f:
         filepaths_and_text = [line.strip().split(split) for line in f]"""
-    with open("data/VCTK-Corpus-0.92/splits/train.txt") as split_f:
-        csv_reader = csv.reader(split_f, delimiter="|")
+    with open(filename) as split_f:
+        csv_reader = csv.reader(split_f, delimiter=split)
         next(csv_reader, None)
         filepaths_and_text = [line for line in csv_reader]
     return filepaths_and_text

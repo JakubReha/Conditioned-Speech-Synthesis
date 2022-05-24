@@ -48,6 +48,10 @@ def prepare_dataloaders(hparams):
     #valset = IEMOCAPDataset(path_to_csv="data/splits/val.csv", silence=False, padded=False)
     trainset = TextMelLoader("data/VCTK-Corpus-0.92/splits/train.txt", hparams)
     valset = TextMelLoader("data/VCTK-Corpus-0.92/splits/val.txt", hparams)
+    print("Train set")
+    print(len(trainset))
+    print("Val set")
+    print(len(valset))
     collate_fn = TextMelCollate(hparams.n_frames_per_step)
 
     if hparams.distributed_run:

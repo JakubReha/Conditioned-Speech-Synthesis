@@ -7,7 +7,7 @@ import glob
 PATH_TO_DATA = "data/VCTK-Corpus-0.92"
 OUT_DIR = f"{PATH_TO_DATA}/splits"
 TEST_SPLIT = 0
-VAL_SPLIT = 0.1
+VAL_SPLIT = 0.05
 TRAIN_SPLIT = 1 - (TEST_SPLIT+VAL_SPLIT)
 
 SPEAKERS = ['p364', 'p256', 'p299', 'p313', 'p306', 'p261', 'p244', 'p304', 'p240', 'p305', 'p250', 'p278', 'p255',
@@ -45,7 +45,7 @@ def main():
         for file in files[int(np.ceil(file_count*TRAIN_SPLIT)):int(np.ceil(file_count*TRAIN_SPLIT)+np.ceil(file_count*VAL_SPLIT))]:
             with open(file) as f:
                 text = f.readlines()[0][:-2].rstrip()
-        val_items += [[file.replace(".txt", "_mic2.flac").replace("txt", "wav48_silence_trimmed"), text, SPEAKERS.index(speaker)]]
+            val_items += [[file.replace(".txt", "_mic2.flac").replace("txt", "wav48_silence_trimmed"), text, SPEAKERS.index(speaker)]]
     random.shuffle(train_items)
     random.shuffle(val_items)
     writeToFile("train.txt", train_items)
