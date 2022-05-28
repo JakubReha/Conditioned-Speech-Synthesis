@@ -53,6 +53,7 @@ def create_hparams(hparams_string=None, verbose=False):
         encoder_n_convolutions=3,
         encoder_embedding_dim=512,
         n_speakers=108,
+        encoding_type="fixed",
 
         # Decoder parameters
         n_frames_per_step=1,  # currently only 1 is supported
@@ -79,7 +80,7 @@ def create_hparams(hparams_string=None, verbose=False):
         ################################
         # Optimization Hyperparameters #
         ################################
-        use_saved_learning_rate=False,
+        use_saved_learning_rate=True,
         learning_rate=1e-3,
         weight_decay=1e-6,
         grad_clip_thresh=1.0,

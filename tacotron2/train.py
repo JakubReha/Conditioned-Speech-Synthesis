@@ -267,12 +267,12 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output_directory', type=str,
-                        help='directory to save checkpoints', default="tacotron_output_vctk")
+                        help='directory to save checkpoints', default="tacotron_output_vctk_fixed")
     parser.add_argument('-l', '--log_directory', type=str,
-                        help='directory to save tensorboard logs', default="vctk_tacotron_logs")
+                        help='directory to save tensorboard logs', default="vctk_tacotron_logs/fixed")
     parser.add_argument('-c', '--checkpoint_path', type=str, default="tacotron2/tacotron2_statedict.pt",
                         required=False, help='checkpoint path')
-    parser.add_argument('--warm_start', action='store_false',
+    parser.add_argument('--warm_start', action='store_true',
                         help='load model weights only, ignore specified layers')
     parser.add_argument('--n_gpus', type=int, default=1,
                         required=False, help='number of gpus')

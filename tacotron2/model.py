@@ -5,7 +5,8 @@ from torch import nn
 from torch.nn import functional as F
 from layers import ConvNorm, LinearNorm
 from utils import to_gpu, get_mask_from_lengths
-
+import pickle
+import numpy as np
 
 class LocationLayer(nn.Module):
     def __init__(self, attention_n_filters, attention_kernel_size,
@@ -461,9 +462,13 @@ class Tacotron2(nn.Module):
         self.fp16_run = hparams.fp16_run
         self.n_mel_channels = hparams.n_mel_channels
         self.n_frames_per_step = hparams.n_frames_per_step
+        self.encoding_type = hparams.encoding_type
         self.embedding = nn.Embedding(
             hparams.n_symbols, hparams.symbols_embedding_dim)
         self.speakers_embedding = nn.Embedding(hparams.n_speakers, hparams.encoder_embedding_dim)
+        with open('speaker_embeddings.pickle', 'rb') as handle:
+            self.fixed_speakers_embedding = pickle.load(handle)
+        self.speakers_fc = nn.Linear(256, 512)
         torch.nn.init.xavier_uniform_(self.speakers_embedding.weight)
         std = sqrt(2.0 / (hparams.n_symbols + hparams.symbols_embedding_dim))
         val = sqrt(3.0) * std  # uniform bounds for std
@@ -505,7 +510,12 @@ class Tacotron2(nn.Module):
         text_lengths, output_lengths = text_lengths.data, output_lengths.data
 
         embedded_inputs = self.embedding(text_inputs).transpose(1, 2)
-        embedded_speakers = self.speakers_embedding(speakers)
+        if self.encoding_type == "fixed":
+            embedded_speakers = self.speakers_fc(torch.from_numpy(np.array([self.fixed_speakers_embedding[int(speaker.squeeze().detach().cpu())] for speaker in speakers])).cuda()).unsqueeze(1)
+        elif self.encoding_type == "train":
+            embedded_speakers = self.speakers_embedding(speakers)
+        elif self.encoding_type == "gst":
+            embedded_speakers = self.speakers_embedding(speakers)
         encoder_outputs = self.encoder(embedded_inputs, text_lengths)
         encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder(
