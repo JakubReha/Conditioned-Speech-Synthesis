@@ -7,6 +7,7 @@ from layers import ConvNorm, LinearNorm
 from utils import to_gpu, get_mask_from_lengths
 import pickle
 import numpy as np
+from GST import GST
 
 class LocationLayer(nn.Module):
     def __init__(self, attention_n_filters, attention_kernel_size,
@@ -463,6 +464,8 @@ class Tacotron2(nn.Module):
         self.n_mel_channels = hparams.n_mel_channels
         self.n_frames_per_step = hparams.n_frames_per_step
         self.encoding_type = hparams.encoding_type
+        if self.encoding_type == "gst":
+            self.gst = GST()
         self.embedding = nn.Embedding(
             hparams.n_symbols, hparams.symbols_embedding_dim)
         self.speakers_embedding = nn.Embedding(hparams.n_speakers, hparams.encoder_embedding_dim)
@@ -515,7 +518,8 @@ class Tacotron2(nn.Module):
         elif self.encoding_type == "train":
             embedded_speakers = self.speakers_embedding(speakers)
         elif self.encoding_type == "gst":
-            embedded_speakers = self.speakers_embedding(speakers)
+            embedded_speakers = self.gst(mels)
+            embedded_speakers = torch.hstack((embedded_speakers, embedded_speakers)).unsqueeze(1)
         encoder_outputs = self.encoder(embedded_inputs, text_lengths)
         encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder(
@@ -531,7 +535,13 @@ class Tacotron2(nn.Module):
     def inference(self, inputs, speaker_id):
         embedded_inputs = self.embedding(inputs).transpose(1, 2)
         encoder_outputs = self.encoder.inference(embedded_inputs)
-        embedded_speakers = self.speakers_embedding(speaker_id)
+        if self.encoding_type == "fixed":
+            embedded_speakers = self.speakers_fc(torch.from_numpy(np.array(
+                self.fixed_speakers_embedding[int(speaker_id.squeeze().detach().cpu())])).cuda().unsqueeze(0).to(torch.float16)).unsqueeze(1)
+        elif self.encoding_type == "train":
+            embedded_speakers = self.speakers_embedding(speaker_id)
+        elif self.encoding_type == "gst":
+            embedded_speakers = self.speakers_embedding(speaker_id)
         encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder.inference(
             encoder_outputs)

@@ -53,7 +53,7 @@ def create_hparams(hparams_string=None, verbose=False):
         encoder_n_convolutions=3,
         encoder_embedding_dim=512,
         n_speakers=108,
-        encoding_type="fixed",
+        encoding_type="gst",
 
         # Decoder parameters
         n_frames_per_step=1,  # currently only 1 is supported

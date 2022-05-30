@@ -36,7 +36,7 @@ if __name__ == "__main__":
     hparams = create_hparams()
     hparams.sampling_rate = 22050
     #checkpoint_path = "tacotron2/tacotron2_statedict.pt"
-    checkpoint_path = "tacotron_output_vctk/checkpoint_31000"
+    checkpoint_path = "tacotron_output_vctk_fixed/checkpoint_34000"
     OUT_DIR = "inference_vctk_"+checkpoint_path.split("_")[-1]
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
