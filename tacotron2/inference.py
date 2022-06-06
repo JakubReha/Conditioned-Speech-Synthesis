@@ -8,9 +8,11 @@ import os
 from tqdm import tqdm
 from hparams import create_hparams
 from train import load_model
-from text import text_to_sequence
+from text import text_to_sequence, sequence_to_text
 from denoiser import Denoiser
 import soundfile as sf
+from train import prepare_dataloaders
+from torch.utils.data import DataLoader
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
@@ -35,16 +37,17 @@ def plot_data(data, OUT_DIR, k, figsize=(16, 4)):
 if __name__ == "__main__":
     hparams = create_hparams()
     hparams.sampling_rate = 22050
+    tokens = True
     #checkpoint_path = "tacotron2/tacotron2_statedict.pt"
-    checkpoint_path = "tacotron_output_vctk_fixed/checkpoint_34000"
-    OUT_DIR = "inference_vctk_"+checkpoint_path.split("_")[-1]
+    checkpoint_path = "tacotron_output_vctk_gst/checkpoint_31000"
+    OUT_DIR = "negative_half_tokens_inference_vctk_"+hparams.encoding_type+"_"+checkpoint_path.split("_")[-1]
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
 
 
     model = load_model(hparams)
     model.load_state_dict(torch.load(checkpoint_path)['state_dict'])
-    _ = model.cuda().eval().half()
+    model = model.cuda().eval().half()
 
     waveglow_path = 'tacotron2/waveglow_256channels_new.pt'
     waveglow = torch.load(waveglow_path)['model']
@@ -61,19 +64,61 @@ if __name__ == "__main__":
     sequence = torch.autograd.Variable(
         torch.from_numpy(sequence)).cuda().long()
     embeddings = []
-    for i in tqdm(SPEAKERS):
-        (mel_outputs, mel_outputs_postnet, _, alignments), embedded_speaker = model.inference(sequence, torch.LongTensor([[SPEAKERS.index(i)]]).cuda())
-        embeddings.append(embedded_speaker.detach().cpu().numpy().squeeze())
-        plot_data((mel_outputs.float().data.cpu().numpy()[0],
-                   mel_outputs_postnet.float().data.cpu().numpy()[0],
-                   alignments.float().data.cpu().numpy()[0].T), OUT_DIR, i)
+    ref_mel = {}
+    if hparams.encoding_type == "gst":
+        hparams.batch_size = 1
+        train_loader, valset, collate_fn = prepare_dataloaders(hparams)
+        val_sampler = None
+        val_loader = DataLoader(valset, sampler=val_sampler, num_workers=2,
+                                shuffle=False, batch_size=1,
+                                pin_memory=False, collate_fn=collate_fn)
+        dur = 0
+        for i, batch in enumerate(tqdm(val_loader)):
+            x, y = model.parse_batch(batch)
+            mel = x[2]
+            sp = x[-1]
+            dur += mel.shape[-1]
+            """
+            id = int(sp.squeeze().detach().cpu().numpy())
+            if id not in ref_mel: #or mel.shape[-1] > ref_mel[id].shape[-1]:
+                ref_mel[id] = mel.half()
+                if SPEAKERS[id] == "p258":
+                    print(id)
+                    print(sequence_to_text(x[0].squeeze().detach().cpu().numpy()))"""
+    print(dur)
+    if tokens == True:
+        for i in tqdm(range(10)):
+            weights = torch.zeros(10).cuda().half()
+            weights[i] = - 0.5
+            (mel_outputs, mel_outputs_postnet, _, alignments), embedded_speaker = model.inference(sequence, weights=weights)
 
-        with torch.no_grad():
-            audio = waveglow.infer(mel_outputs_postnet, sigma=0.666)
-        sf.write(os.path.join(OUT_DIR, "demo_speaker_"+str(i)+".wav"), audio[0].data.cpu().numpy().astype(np.float32), hparams.sampling_rate)
+            embeddings.append(embedded_speaker.detach().cpu().numpy().squeeze())
+            plot_data((mel_outputs.float().data.cpu().numpy()[0],
+                       mel_outputs_postnet.float().data.cpu().numpy()[0],
+                       alignments.float().data.cpu().numpy()[0].T), OUT_DIR, i)
 
-        #audio_denoised = denoiser(audio, strength=0.01)[:, 0]
-        #sf.write(os.path.join(OUT_DIR, "demo_denoised_speaker_"+str(i)+".wav"), audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
+            with torch.no_grad():
+                audio = waveglow.infer(mel_outputs_postnet, sigma=0.666)
+            sf.write(os.path.join(OUT_DIR, "demo_token_" + str(i) + ".wav"),
+                     audio[0].data.cpu().numpy().astype(np.float32), hparams.sampling_rate)
+    else:
+        for i in tqdm(SPEAKERS):
+            if hparams.encoding_type == "gst":
+                (mel_outputs, mel_outputs_postnet, _, alignments), embedded_speaker = model.inference(sequence,
+                                                                                                      torch.LongTensor([[SPEAKERS.index(i)]]).cuda(), ref_mel[SPEAKERS.index(i)])
+            else:
+                (mel_outputs, mel_outputs_postnet, _, alignments), embedded_speaker = model.inference(sequence, torch.LongTensor([[SPEAKERS.index(i)]]).cuda())
+            embeddings.append(embedded_speaker.detach().cpu().numpy().squeeze())
+            plot_data((mel_outputs.float().data.cpu().numpy()[0],
+                       mel_outputs_postnet.float().data.cpu().numpy()[0],
+                       alignments.float().data.cpu().numpy()[0].T), OUT_DIR, i)
+
+            with torch.no_grad():
+                audio = waveglow.infer(mel_outputs_postnet, sigma=0.666)
+            sf.write(os.path.join(OUT_DIR, "demo_speaker_"+str(i)+".wav"), audio[0].data.cpu().numpy().astype(np.float32), hparams.sampling_rate)
+
+            #audio_denoised = denoiser(audio, strength=0.01)[:, 0]
+            #sf.write(os.path.join(OUT_DIR, "demo_denoised_speaker_"+str(i)+".wav"), audio_denoised.squeeze().cpu().numpy().astype(np.float32), hparams.sampling_rate)
 
 
     """pca = TSNE(n_components=2, perplexity=5)

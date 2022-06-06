@@ -49,6 +49,12 @@ class GST(nn.Module):
         x = weights @ tokens
         return x
 
+    def token_inference(self, weights):
+        weights = weights.unsqueeze(0)
+        tokens = self.tanh(self.tokens)
+        x = weights @ tokens
+        return x
+
 if __name__ == '__main__':
     dim = 80
     max_l = 302

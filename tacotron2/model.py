@@ -466,13 +466,15 @@ class Tacotron2(nn.Module):
         self.encoding_type = hparams.encoding_type
         if self.encoding_type == "gst":
             self.gst = GST()
-        self.embedding = nn.Embedding(
-            hparams.n_symbols, hparams.symbols_embedding_dim)
-        self.speakers_embedding = nn.Embedding(hparams.n_speakers, hparams.encoder_embedding_dim)
-        with open('speaker_embeddings.pickle', 'rb') as handle:
-            self.fixed_speakers_embedding = pickle.load(handle)
+        elif self.encoding_type == "train":
+            self.speakers_embedding = nn.Embedding(hparams.n_speakers, hparams.encoder_embedding_dim)
+        elif self.encoding_type == "fixed":
+            with open('speaker_embeddings.pickle', 'rb') as handle:
+                self.fixed_speakers_embedding = pickle.load(handle)
         self.speakers_fc = nn.Linear(256, 512)
         torch.nn.init.xavier_uniform_(self.speakers_embedding.weight)
+        self.embedding = nn.Embedding(
+            hparams.n_symbols, hparams.symbols_embedding_dim)
         std = sqrt(2.0 / (hparams.n_symbols + hparams.symbols_embedding_dim))
         val = sqrt(3.0) * std  # uniform bounds for std
         self.embedding.weight.data.uniform_(-val, val)
@@ -532,16 +534,26 @@ class Tacotron2(nn.Module):
             [mel_outputs, mel_outputs_postnet, gate_outputs, alignments],
             output_lengths)
 
-    def inference(self, inputs, speaker_id):
+    def inference(self, inputs, speaker_id=None, mel=None, weights=None, embedding=None):
         embedded_inputs = self.embedding(inputs).transpose(1, 2)
         encoder_outputs = self.encoder.inference(embedded_inputs)
         if self.encoding_type == "fixed":
-            embedded_speakers = self.speakers_fc(torch.from_numpy(np.array(
-                self.fixed_speakers_embedding[int(speaker_id.squeeze().detach().cpu())])).cuda().unsqueeze(0).to(torch.float16)).unsqueeze(1)
+            if speaker_id is not None:
+                embedded_speakers = self.speakers_fc(torch.from_numpy(np.array(
+                    self.fixed_speakers_embedding[int(speaker_id.squeeze().detach().cpu())])).cuda().unsqueeze(0).to(
+                    torch.float16)).unsqueeze(1)
+            else:
+                embedded_speakers = self.speakers_fc(embedding).unsqueeze(1)
         elif self.encoding_type == "train":
             embedded_speakers = self.speakers_embedding(speaker_id)
         elif self.encoding_type == "gst":
-            embedded_speakers = self.speakers_embedding(speaker_id)
+            if mel is not None:
+                embedded_speakers = self.gst(mel)
+            else:
+                embedded_speakers = self.gst.token_inference(weights)
+            embedded_speakers = torch.hstack((embedded_speakers, embedded_speakers)).unsqueeze(1)
+        else:
+            embedded_speakers = 0
         encoder_outputs = encoder_outputs + embedded_speakers
         mel_outputs, gate_outputs, alignments = self.decoder.inference(
             encoder_outputs)
